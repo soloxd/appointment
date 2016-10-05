@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="../../js/H-ui/static/h-ui/css/H-ui.css" />
+</head>
+<body style="margin: 10px;">
+  <div style="margin-bottom: 20px;">
+    <label>一级科室：</label>
+    <select style="width: 150px; height: 24px; margin-top: 3px;" class="select" size="1" 
+        data-bind="options: deptList1, optionsText: 'name', optionsValue:'id', optionsCaption: '全部', value: dept1, event:{change: loadDeptList2}">
+    </select>
+    <label style="margin-left: 20px;">二级科室：</label>
+    <select style="width: 150px; height: 24px; margin-top: 3px;" class="select" size="1" 
+        data-bind="options: deptList2, optionsText: 'name', optionsValue:'id', optionsCaption: '全部', value: dept2">
+    </select>
+    <label style="margin-left: 20px;">医生（助记符）：</label>
+    <input style="width: 100px;" class="input-text radius size-S" data-bind="value: doctorName" />
+    <label style="margin-left: 20px;">挂号方式：</label>
+    <select style="width: 80px; height: 24px; margin-top: 3px;" class="select" size="1" data-bind="value: regWay">
+        <option value="" selected>全部</option>
+        <option value="1">电话预约</option>
+        <option value="2">网上预约</option>
+        <option value="2">现场预约</option>
+    </select>
+    <label style="margin-left: 20px;">状态：</label>
+    <select style="width: 80px; height: 24px; margin-top: 3px;" class="select" size="1" data-bind="value: status">
+        <option value="" selected>全部</option>
+        <option value="1">已登记</option>
+        <option value="2">未登记</option>
+    </select>
+    <p style="height: 5px; margin: 0;">&nbsp;</p>
+    <label>预约开始时间：</label>
+    <input id="apptDateStart" style="width: 125px;" class="input-text radius size-S Wdate" onfocus="WdatePicker({readOnly:true})" />
+    <label style="margin-left: 20px;">预约结束时间：</label>
+    <input id="apptDateEnd"style="width: 125px;" class="input-text radius size-S Wdate" onfocus="WdatePicker({readOnly:true})" />
+    <label style="margin-left: 20px;">操作人：</label>
+    <input style="width: 100px;" class="input-text radius size-S" data-bind="value: regPerson" />
+    <label style="margin-left: 20px;">患者（手机号）：</label>
+    <input style="width: 120px;" class="input-text radius size-S" data-bind="value: patientName" />
+    <input style="margin-left: 20px;" class="btn btn-primary radius size-S" 
+        type="button" value="查 询" data-bind="click: query" />
+    <input style="margin-left: 15px;" class="btn btn-success radius size-S" 
+        type="button" value="重 置" data-bind="click: reset" />
+  </div>  
+
+<table class="table table-border table-striped table-hover">
+  <thead class="text-c">
+    <tr>
+      <th width="15%">患者</th>
+      <th width="15%">医生</th>
+      <th width="25%">预约信息</th>
+      <th width="25%">挂号信息</th>
+      <th width="10%">状态</th>
+      <th width="10%">短信通知</th>
+    </tr>
+  </thead>
+  <tbody class="text-c" data-bind="foreach: list">
+    <tr>
+      <td >
+        <div data-bind="text: patientName"></div>
+        <div data-bind="text: patientPhone"></div>
+        <div data-bind="text: patientId"></div>
+      </td>
+      <td>
+        <div data-bind="text: doctorName"></div>
+        <div data-bind="text: doctorTitle"></div>
+        <div data-bind="text: deptName"></div>
+      </td>
+      <td>
+        <div data-bind="text: apptCode"></div>
+        <div data-bind="text: apptDate"></div>
+        <div data-bind="text: apptType"></div>
+      </td>
+      <td>
+        <div data-bind="text: regPerson"></div>
+        <div data-bind="text: regTime"></div>
+        <div data-bind="text: regWay"></div>
+      </td>
+      <td data-bind="text: status"></td>
+      <td data-bind="text: sms"></td>
+    </tr>
+  </tbody>
+</table>
+<div style="margin-top: 10px;">
+    <div id="page" style="float: left;" data-bind="visible: shouldShowPage"></div>
+    <div style="float: right; margin-right: 10px;" data-bind="text: total"></div>
+</div>
+
+<script type="text/javascript" src="../../js/lib/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="../../js/lib/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../js/lib/knockout-3.4.0.js"></script>
+<script type="text/javascript" src="../../js/appt/apptQuery.js"></script>
+
+</body>
+</html>

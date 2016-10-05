@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- configuration file for LogBack (slf4J implementation)
+See here for more details: http://gordondickens.com/wordpress/2013/03/27/sawing-through-the-java-loggers/ -->
+<configuration scan="true" scanPeriod="30 seconds">
+	<property name="APP_NAME" value="appointment" />
+	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d [%thread] %-5level [%file:%line] - %msg%n</pattern>
+		</encoder>
+	</appender>
+    
+	<!--Appendar详解: http://logback.qos.ch/manual/appenders.html#RollingFileAppender -->
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>/export/logs/${APP_NAME}/${APP_NAME}.log</file>
+		
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/export/logs/${APP_NAME}/${APP_NAME}.%d{yyyy-MM-dd}.%i.zip</fileNamePattern>
+			<maxHistory>15</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+
+		<layout class="ch.qos.logback.classic.PatternLayout"> 
+			<!-- 格式说明:http://logback.qos.ch/manual/layouts.html#ClassicPatternLayout -->
+			<Pattern>%d [%thread] %-5level [%file:%line] - %msg%n</Pattern> 
+		</layout>
+	</appender>
+
+	
+	<logger name="com.zzszxyy.appointment" level="debug">
+		<appender-ref ref="STDOUT" />
+	</logger>
+	<logger name="org.springframework" level="error">
+		<appender-ref ref="STDOUT" />
+	</logger>
+	<logger name="org.apache.ibatis" level="debug" >
+       <appender-ref ref="STDOUT" />
+    </logger>  
+    <logger name="java.sql.Statement" level="debug" >
+       <appender-ref ref="STDOUT" />
+    </logger>
+
+	<root level="debug">
+		<appender-ref ref="FILE" />
+	</root>
+</configuration>
+

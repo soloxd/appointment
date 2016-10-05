@@ -1,0 +1,195 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>郑州中心医院预约挂号统</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<link rel="Shortcut Icon" href="../../favicon.ico" />
+<link rel="stylesheet" type="text/css" href="../../js/H-ui/static/h-ui/css/H-ui.css" />
+<link rel="stylesheet" type="text/css" href="../../js/H-ui/lib/Hui-iconfont/1.0.7/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../../css/onstage/index.css"  >
+<style type="text/css">
+.container{padding-left: 0; padding-right: 0;}
+
+.grzx_left_ul2 {
+    padding-bottom: 200px;
+}
+.grzx_left_ul {
+    width: 200px;
+    margin-top: 21px;
+    padding-bottom: 140px;
+}
+
+.grzx_left_ul li {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    font-size: 14px;
+    padding-bottom: 5px;
+    letter-spacing: 3px;
+}
+.grzx_left_ul li a.grzx_left_ul_a {
+    display: inline-block;
+    width: 140px;
+    height: 40px;
+    background: #60bff2;
+    color: #fff;
+}
+.grzx_left_ul li a {
+    color: #4c4948;
+    padding-left: 61px;
+}
+.modal.fade.in {
+    top: 300px;
+}
+a {
+	text-decoration: none; 
+}
+a:hover{
+text-decoration:none;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+    <div class="container">
+       <div class="header">
+           <img src="../../images/onstage/logo.jpg">
+           <div class="nav">
+               <a href="../../index.html">首页</a>
+               <a href="javascript:void(0)">个人中心</a>
+           </div>
+       </div>
+    </div>
+    
+    <div class="tabs">
+      <table>
+        <tr>
+          <td style="width: 150px; text-align: center; border-right: 1px solid #dcdddd;">
+          <img src="../../images/onstage/tx.jpg" class="round">
+          <div style="margin: 10px 0; ">
+             <div style="margin: 5px 0;">姓名：张三</div>
+             <div style="height: 20px;">手机号：13324245656</div>
+             <div style="height: 30px; padding-top: 5px; font-size: 13px;"><a style="color: #2DA5E1; cursor: pointer;">退出登录</a></div>
+          </div>
+          <ul class="grzx_left_ul grzx_left_ul2">
+            <li><a href="patientApptQuery.html" >预约信息</a></li>
+            <li><a href="patientAdd.html" class="grzx_left_ul_a">就诊人管理</a></li>
+          </ul>
+          </td>
+          <td style="vertical-align: top;">
+            <div style="padding: 10px;">
+            <div style="font-size: 13px; margin: 4px 0 10px 0; float: right;">
+               <input class="btn radius btn-secondary size-S" href="#addModal" data-toggle="modal" type="button" value="添加就诊人">
+            </div>
+            <table class="table">
+                <thead class="text-c" style="color: #60bff2; border-bottom: 1px solid #2DA5E1;">
+                 <tr  style="font-size: 14px; height: 30px;">
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>证件类型</th>
+                    <th>证件号</th>
+                    <th>手机号</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody class="text-c">
+                <tr style="height: 30px;">
+                    <td>张三</td>
+                    <td>男</td>
+                    <td>身份证</td>
+                    <td>612325198811223344</td>
+                    <td>17712123434</td>
+                    <td><input class="btn btn-danger size-MINI radius" href="#delModal" data-toggle="modal" type="button" value="删 除"></td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+      
+    <div class="footer">
+        <ul>
+            <li>地址：郑州市中原区桐柏路195号（桐柏路与协作路交叉口）| 咨询台:0371-67690000</li>
+            <li>版权所有 京ICP备05056889号</li>
+        </ul>
+    </div>
+</div>
+ 
+ <div id="delModal" class="modal  fade" tabindex="-1" role="dialog" aria-labelledby="delModalLabel" aria-hidden="false">
+      <div class="modal-header">
+        <h4 id="delModalLabel">删除</h4>
+        <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+      </div>
+      <div class="modal-body">
+      <p>确定要删除吗？</p>
+      </div>
+      <div class="modal-footer">
+          <button class="btn btn-primary radius size-S">确 定</button>
+          <button class="btn radius size-S" data-dismiss="modal" aria-hidden="true">关 闭</button>
+      </div>
+    </div>
+    
+     <div id="addModal" class="modal  fade" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="false">
+      <div class="modal-header">
+        <h4 id="addModalLabel">添加就诊人</h4>
+        <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+      </div>
+      <div class="modal-body">
+         <form action="" method="post" class="form form-horizontal" id="demoform-1">
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-3">姓名：</label>
+                        <div class="formControls col-xs-8 col-sm-7">
+                            <input type="text" class="input-text" autocomplete="off" placeholder="" data-form-un="1474510582845.8704">
+                        </div>
+                    </div>
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-3">性别：</label>
+                        <div class="formControls skin-minimal col-xs-8 col-sm-7">
+                            <label><input name="Fruit" type="radio" value=""  style="height: 30px;" />男 </label> 
+                            <label><input name="Fruit" type="radio" value="" style="height: 30px; margin-left: 20px;" />女 </label> 
+                        </div>
+                    </div>
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-3">证件类型：</label>
+                        <div class="formControls col-xs-8 col-sm-7">
+                            <select class="select" size="1" name="demo1" style="height: 30px;">
+                                <option value="" selected="">身份证</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-3">证件号：</label>
+                        <div class="formControls col-xs-8 col-sm-7">
+                            <input type="text" class="input-text" autocomplete="off" placeholder="" data-form-un="1474510582845.8704">
+                        </div>
+                    </div>
+                    <div class="row cl">
+                        <label class="form-label col-xs-4 col-sm-3">手机号：</label>
+                        <div class="formControls col-xs-8 col-sm-7">
+                            <input type="text" class="input-text" autocomplete="off" placeholder="" data-form-un="1474510582845.8704">
+                        </div>
+                    </div>
+                </form>
+      </div>
+      <div class="modal-footer">
+          <button class="btn btn-primary radius size-S">确 定</button>
+          <button class="btn radius size-S" data-dismiss="modal" aria-hidden="true">关 闭</button>
+      </div>
+    </div>
+    
+<script type="text/javascript" src="../../js/lib/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/H-ui/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="../../js/H-ui/lib/bootstrap-modal/2.2.4/bootstrap-modalmanager.js"></script>
+<script type="text/javascript" src="../../js/H-ui/lib/bootstrap-modal/2.2.4/bootstrap-modal.js"></script>
+</body>
+</html>

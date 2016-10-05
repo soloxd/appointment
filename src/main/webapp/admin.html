@@ -1,0 +1,114 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>郑州中心医院预约后台管理系统</title>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Shortcut Icon" href="favicon.ico" />
+
+<!--[if lt IE 9]>
+<script type="text/javascript" src="http://lib.h-ui.net/html5.js"></script>
+<script type="text/javascript" src="http://lib.h-ui.net/respond.min.js"></script>
+<script type="text/javascript" src="http://lib.h-ui.net/PIE_IE678.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" type="text/css" href="js/H-ui/static/h-ui/css/H-ui.css" />
+<link rel="stylesheet" type="text/css" href="js/H-ui/static/h-ui/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="js/H-ui/static/h-ui/css/H-ui.doc.css" />
+<link rel="stylesheet" type="text/css" href="js/H-ui/lib/Hui-iconfont/1.0.7/iconfont.css" />
+
+<style type="text/css">
+#Hui-nav li#Huinav_3 a, #Hui-nav li#Huinav_3 a:hover{color: #fff; background-color: #111}
+</style>
+</head>
+
+<body>
+<header class="navbar-wrapper">
+    <div class="navbar navbar-black navbar-fixed-top">
+        <div class="container-fluid cl">
+            <img height="44px" src="images/logo.jpg" style="float: left;"/>
+            <a class="logo navbar-logo" href="javascript:;"><b>郑州中心医院预约后台管理系统</b></a>
+            <nav class="navbar-userbar f-r hidden-xs hidden-sm"> 
+                <span class="dropDown">
+                    <a class="btn btn-default" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="Hui-iconfont">&#xe62d;</i>&nbsp;系统管理员</a>
+                    <ul class="dropDown-menu menu radius box-shadow" style="top: 32px;">
+                        <li><a href="#">修改密码</a></li>
+			            <li><a href="#">退出</a></li>
+			        </ul>
+                </span>
+            </nav>
+        </div>
+    </div>
+</header>
+ 
+<aside class="Hui-aside">
+  <div class="menu_dropdown">
+    <dl>
+      <dt><span>系统管理</span><i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+      <dd>
+        <ul>
+          <li><a target="main" href="pages/sys/department.html">科室管理</a></li>
+          <li><a target="main" href="pages/sys/doctor.html">医生管理</a></li>
+          <li><a target="main" href="pages/sys/patient.html">患者查询</a></li>
+          <li><a target="main" href="pages/sys/blacklist.html">黑名单管理</a></li>
+        </ul>
+      </dd>
+    </dl>
+    <dl>
+      <dt><span>排班管理</span><i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+      <dd>
+        <ul>
+          <li><a target="main" href="pages/rostering/haobiao.html">号表管理</a></li>
+          <li><a target="main" href="pages/rostering/haobiaoConf.html">周排班维护</a></li>
+          <li><a target="main" href="pages/rostering/shenhe.html">排班审核</a></li>
+          <li><a target="main" href="pages/rostering/hbcx.html">号表查询</a></li>
+        </ul>
+      </dd>
+    </dl>
+    <dl>
+      <dt><span>预约管理</span><i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+      <dd>
+        <ul>
+          <li><a target="main" href="pages/appt/register.html">预约挂号</a></li>
+          <li><a target="main" href="pages/appt/apptCancel.html">预约取消</a></li>
+          <li><a target="main" href="pages/appt/apptQuery.html">预约信息查询</a></li>
+          <li><a target="main" href="pages/appt/apptCount.html">预约量统计</a></li>
+          <li><a target="main" href="pages/appt/apptWayCount.html">预约方式统计</a></li>
+        </ul>
+      </dd>
+    </dl>
+  </div>
+</aside>
+<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
+<section class="Hui-article-box">
+  <nav class="breadcrumb">
+    <i class="Hui-iconfont">&#xe67f;</i>
+    <span class="c-666"><a target="main" href="pages/home.html">首页</a> </span>
+    <span style="display: none" class="c-999">&gt;</span><span id="mb1" class="c-666"></span>
+    <span style="display: none" class="c-999">&gt;</span><span id="mb2" class="c-666"></span>
+  </nav>
+  <div class="Hui-article" style="overflow:hidden;">
+    <iframe id="mainid" name="main" src="pages/home.html" width="100%"  scrolling="auto" frameborder="0"></iframe>
+  </div>
+</section>
+
+<script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/H-ui/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript">
+$(function(){
+    $.Huifold(".menu_dropdown dl dt", ".menu_dropdown dl dd", "fast", 1, "click");
+    
+    $(".menu_dropdown a").click(function() {
+        $("span.c-999").show();
+        $("#mb1").html($(this).parent().parent().parent().parent().children("dt").children("span").text());
+        $("#mb2").html($(this).text());
+    });
+    
+    $("#mainid").height($("section").height() - $("nav.breadcrumb").height() - 1);
+}); 
+</script>
+</body>
+</html>

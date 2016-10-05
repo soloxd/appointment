@@ -1,0 +1,459 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="../../js/H-ui/static/h-ui/css/H-ui.css" />
+</head>
+<body style="margin: 10px;">
+
+<div id="tab_demo" class="HuiTab">
+    <div class="tabBar cl">
+      <span id="tab1">待审核</span>
+      <span id="tab2">已审核</span>
+    </div>
+    <div class="tabCon" style="margin: 10px;">
+      <div style="margin-bottom: 20px;">
+	    <label>一级科室：</label>
+	    <select style="width: 150px; height: 24px; margin-top: 3px;" class="select" size="1" name="demo1">
+	        <option value="" selected>全部</option>
+	        <option value="1">内科</option>
+	        <option value="2">外科</option>
+	        <option value="3">妇产科</option>
+	        <option value="4">儿科</option>
+	        <option value="4">骨科</option>
+	        <option value="4">口腔科</option>
+	        <option value="4">眼科</option>
+	        <option value="4">中医科</option>
+	        <option value="4">精神心理科</option>
+	        <option value="4">皮肤性病科</option>
+	        <option value="4">整形科</option>
+	        <option value="4">肿瘤科</option>
+	        <option value="4">男科</option>
+	        <option value="4">疼痛科</option>
+	        <option value="4">耳鼻喉科</option>
+	        <option value="4">重症医学科</option>
+	        <option value="4">急诊科</option>
+	        <option value="4">临床其他</option>
+	    </select>
+	    <label style="margin-left: 20px;">二级科室：</label>
+	    <select style="width: 150px; height: 24px; margin-top: 3px;" class="select" size="1" name="demo1">
+	        <option value="" selected>全部</option>
+	        <option value="1">风湿免疫科</option>
+	        <option value="2">感染性疾病科</option>
+	        <option value="3">呼吸内科 </option>
+	        <option value="4">呼内一科</option>
+	        <option value="4">呼内二科</option>
+	        <option value="4">老年心内科</option>
+	        <option value="4">老年医学科</option>
+	        <option value="4">内分泌科</option>
+	        <option value="4">内分泌一科</option>
+	        <option value="4">内分泌二科</option>
+	        <option value="4">肾病风湿科</option>
+	        <option value="4">神经内科</option>
+	        <option value="4">神内一科</option>
+	        <option value="4">神内二科</option>
+	        <option value="4">神内三科</option>
+	        <option value="4">消化内科</option>
+	        <option value="4">心内一科</option>
+	        <option value="4">心内二科</option>
+	        <option value="4">心内三科</option>
+	        <option value="4">心内四科</option>
+	        <option value="4">心内五科</option>
+	        <option value="4">心血管内科</option>
+	        <option value="4">血液科</option>
+	        <option value="4">血液内科</option>
+	    </select>                         
+	    <label style="margin-left: 20px;">医生：</label><input style="width: 100px;" class="input-text radius size-S" />                             
+	    <input style="margin-left: 20px;" class="btn btn-primary radius size-S" type="button" value="查 询">
+	  </div>  
+	
+	
+	<table class="table table-border table-hover table-bg">
+	  <thead class="text-c">
+	    <tr>
+	      <th>时间</th>
+	      <th>医生</th>
+	      <th>类型</th>
+	      <th>操作</th>
+	    </tr>
+	  </thead>
+	  <tbody class="text-c">
+	    <tr>
+	      <td>2016年9月 第一周 排班表</th>
+	      <td>张三</td>
+	      <td>周排班表</td>
+	      <td>
+	      <input class="btn btn-link radius size-S" type="button" href="#myModal" data-toggle="modal" value="审核">
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>2016年9月 第二周 排班表</th>
+	      <td>张三</td>
+	      <td>替诊</td>
+	      <td>
+	      <input class="btn btn-link radius size-S" type="button" href="#myModal" data-toggle="modal" value="审核">
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>2016年9月 第三周 排班表</th>
+	      <td>李四</td>
+	      <td>替诊</td>
+	      <td>
+	      <input class="btn btn-link radius size-S" type="button" href="#myModal" data-toggle="modal" value="审核">
+	      </td>
+	    </tr>
+	    <tr>
+	      <td>2016年9月 第四周 排班表</th>
+	      <td>李四</td>
+	      <td>停诊</td>
+	      <td>
+	      <input class="btn btn-link radius size-S" type="button" href="#myModal" data-toggle="modal" value="审核">
+	      </td>
+	    </tr>
+	  </tbody>
+	</table>
+    </div>
+    <div class="tabCon" style="margin: 10px;">
+    <div style="margin-bottom: 20px;">
+        <label>一级科室：</label>
+        <select style="width: 150px; height: 24px; margin-top: 3px;" class="select" size="1" name="demo1">
+            <option value="" selected>全部</option>
+            <option value="1">内科</option>
+            <option value="2">外科</option>
+            <option value="3">妇产科</option>
+            <option value="4">儿科</option>
+            <option value="4">骨科</option>
+            <option value="4">口腔科</option>
+            <option value="4">眼科</option>
+            <option value="4">中医科</option>
+            <option value="4">精神心理科</option>
+            <option value="4">皮肤性病科</option>
+            <option value="4">整形科</option>
+            <option value="4">肿瘤科</option>
+            <option value="4">男科</option>
+            <option value="4">疼痛科</option>
+            <option value="4">耳鼻喉科</option>
+            <option value="4">重症医学科</option>
+            <option value="4">急诊科</option>
+            <option value="4">临床其他</option>
+        </select>
+        <label style="margin-left: 20px;">二级科室：</label>
+        <select style="width: 150px; height: 24px; margin-top: 3px;" class="select" size="1" name="demo1">
+            <option value="" selected>全部</option>
+            <option value="1">风湿免疫科</option>
+            <option value="2">感染性疾病科</option>
+            <option value="3">呼吸内科 </option>
+            <option value="4">呼内一科</option>
+            <option value="4">呼内二科</option>
+            <option value="4">老年心内科</option>
+            <option value="4">老年医学科</option>
+            <option value="4">内分泌科</option>
+            <option value="4">内分泌一科</option>
+            <option value="4">内分泌二科</option>
+            <option value="4">肾病风湿科</option>
+            <option value="4">神经内科</option>
+            <option value="4">神内一科</option>
+            <option value="4">神内二科</option>
+            <option value="4">神内三科</option>
+            <option value="4">消化内科</option>
+            <option value="4">心内一科</option>
+            <option value="4">心内二科</option>
+            <option value="4">心内三科</option>
+            <option value="4">心内四科</option>
+            <option value="4">心内五科</option>
+            <option value="4">心血管内科</option>
+            <option value="4">血液科</option>
+            <option value="4">血液内科</option>
+        </select>                                                      
+        <input style="margin-left: 20px;" class="btn btn-primary radius size-S" type="button" value="查 询">
+      </div>  
+    
+    
+    <table class="table table-border table-hover table-bg">
+      <thead class="text-c">
+        <tr>
+          <th>时间</th>
+          <th>姓名</th>
+          <th>类型</th>
+          <th>查看</th>
+        </tr>
+      </thead>
+      <tbody class="text-c">
+        <tr>
+          <td>2016年9月 第三周 排班表</th>
+          <td>李四</td>
+          <td>替诊</td>
+          <td>
+          <input class="btn btn-link radius size-S" type="button" href="#myModal2" data-toggle="modal" value="详情">
+          </td>
+        </tr>
+        <tr>
+          <td>2016年9月 第四周 排班表</th>
+          <td>李四</td>
+          <td>停诊</td>
+          <td>
+          <input class="btn btn-link radius size-S" type="button" href="#myModal2" data-toggle="modal" value="详情">
+          </td>
+        </tr>
+        <tr>
+          <td>2016年9月 第一周 排班表</th>
+          <td>张三</td>
+          <td>周排班表</td>
+          <td>
+          <input class="btn btn-link radius size-S" type="button" href="#myModal2" data-toggle="modal" value="详情">
+          </td>
+        </tr>
+        <tr>
+          <td>2016年9月 第二周 排班表</th>
+          <td>张三</td>
+          <td>替诊</td>
+          <td>
+          <input class="btn btn-link radius size-S" type="button" href="#myModal2" data-toggle="modal" value="详情">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+</div>
+  
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" data-width="80%" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <h4 id="myModalLabel">审核</h4>
+    <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+  </div>
+  <div class="modal-body">
+  <table class="table table-border table-bordered table-bg">
+  <thead>
+  <tr class="text-c">
+    <th colspan="9"><b>张三  2016年9月 第一周 出诊时间安排</b></th>
+  </tr>
+  </thead>
+  <tr class="text-c">
+    <td rowspan="2" width="20%">日期</td>
+    <td colspan="4" width="40%">上午</td>
+    <td colspan="4" width="40%">下午</td>
+  </tr>
+  <tr class="text-c">
+    <td width="10%">8~9</td>
+    <td width="10%">9~10</td>
+    <td width="10%">10~11</td>
+    <td width="10%">11~12</td>
+    <td width="10%">13~14</td>
+    <td width="10%">14~15</td>
+    <td width="10%">15~16</td>
+    <td width="10%">16~17</td>
+  </tr>
+  <tr class="text-c">
+    <td>2016-09-12　星期一</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+  </tr>
+  <tr class="text-c">
+    <td>2016-09-13　星期二</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+  </tr>
+  <tr class="text-c">
+    <td>2016-09-14　星期三</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+  </tr>
+  <tr class="text-c">
+    <td>2016-09-15　星期四</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+  </tr>
+  <tr class="text-c">
+    <td>2016-09-16　星期五</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+  </tr>
+  <tr class="text-c">
+    <td>2016-09-17　星期六</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+  </tr>
+  <tr class="text-c">
+    <td>2016-09-18　星期日</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<br/>
+<label>审核意见：</label><input style="width: 80%;" class="input-text radius size-S" value=""/>
+<p/>
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-primary radius size-S">审核通过</button>
+      <button class="btn radius size-S" data-dismiss="modal" aria-hidden="true">取 消</button>
+  </div>
+</div>
+
+<div id="myModal2" class="modal hide fade" tabindex="-1" role="dialog" data-width="80%" aria-labelledby="myModalLabel2" aria-hidden="true">
+  <div class="modal-header">
+    <h4 id="myModalLabel2">审核信息</h4>
+    <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+  </div>
+  <div class="modal-body">
+  <table class="table table-border table-bordered table-bg">
+  <thead>
+  <tr class="text-c">
+    <th colspan="9"><b>张三 2016年9月 第一周 出诊时间安排</b></th>
+  </tr>
+  </thead>
+  <tr class="text-c">
+    <td rowspan="2" width="20%">日期</td>
+    <td colspan="4" width="40%">上午</td>
+    <td colspan="4" width="40%">下午</td>
+  </tr>
+  <tr class="text-c">
+    <td width="10%">8~9</td>
+    <td width="10%">9~10</td>
+    <td width="10%">10~11</td>
+    <td width="10%">11~12</td>
+    <td width="10%">13~14</td>
+    <td width="10%">14~15</td>
+    <td width="10%">15~16</td>
+    <td width="10%">16~17</td>
+  </tr>
+  <tr class="text-c">
+    <td>2016-09-12　星期一</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+  </tr>
+  <tr class="text-c">
+    <td>2016-09-13　星期二</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+  </tr>
+  <tr class="text-c">
+    <td>2016-09-14　星期三</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+  </tr>
+  <tr class="text-c">
+    <td>2016-09-15　星期四</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+  </tr>
+  <tr class="text-c">
+    <td>2016-09-16　星期五</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+  </tr>
+  <tr class="text-c">
+    <td>2016-09-17　星期六</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+  </tr>
+  <tr class="text-c">
+    <td>2016-09-18　星期日</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td>5</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<br/>
+<label>审核意见：asdasdasdasdaaaaaaaaaaaaaaaaaa</label><br>
+<label>审核人：赵武</label> <label style="margin-left: 30px;">审核时间：2016-09-12 13:33:44</label><br>
+<p/>
+  </div>
+  <div class="modal-footer">
+      <button class="btn radius size-S" data-dismiss="modal" aria-hidden="true">关 闭</button>
+  </div>
+</div>
+<script type="text/javascript" src="../../js/lib/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/H-ui/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="../../js/H-ui/lib/bootstrap-modal/2.2.4/bootstrap-modalmanager.js"></script>
+<script type="text/javascript" src="../../js/H-ui/lib/bootstrap-modal/2.2.4/bootstrap-modal.js"></script>
+<script type="text/javascript">
+$(function() {
+  $.Huitab("#tab_demo .tabBar span", "#tab_demo .tabCon", "current", "click", "0");
+})
+
+</script>
+</body>
+</html>

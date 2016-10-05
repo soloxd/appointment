@@ -1,0 +1,555 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../../js/H-ui/static/h-ui/css/H-ui.css" />
+
+</head>
+<body style="margin: 10px;">
+    
+
+  <div id="tab_demo" class="HuiTab">
+    <div class="tabBar cl">
+      <span id="tab1">按月统计</span>
+      <span id="tab2">按预约渠道统计</span>
+      <span id="tab3">按预约科室统计</span>
+      <span id="tab4">按预约专家统计</span>
+    </div>
+    <div class="tabCon" style="margin: 10px;">
+        <div style="margin-bottom: 20px;">
+		  <label>开始月份：</label><input style="width: 125px;" value="2016-01" class="input-text radius size-S Wdate" onfocus="WdatePicker({readOnly:true, dateFmt: 'yyyy-MM', isShowToday: false, isShowClear: false})" />
+		  <label style="margin-left: 20px;">结束月份：</label><input style="width: 125px;" value="2016-09" class="input-text radius size-S Wdate" onfocus="WdatePicker({readOnly:true, dateFmt: 'yyyy-MM', isShowToday: false, isShowClear: false})"/>
+		  <input style="margin-left: 20px;" class="btn btn-primary radius size-S" type="button" value="查 询">
+		</div>
+		
+		<table class="table table-border">
+		  <thead class=" text-c">
+		    <tr>
+		      <th>月份</th>
+		      <th>1月</th>
+		      <th>2月</th>
+		      <th>3月</th>
+		      <th>4月</th>
+		      <th>5月</th>
+              <th>6月</th>
+              <th>7月</th>
+              <th>8月</th>
+              <th>9月</th>
+              <th>总数</th>
+		    </tr>
+		  </thead>
+		  <tbody class=" text-c">
+		    <tr>
+		    <th>预约数</th>
+		      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="100" /></td>
+		      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="90" /></td>
+		      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="200" /></td>
+		      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="334" /></td>
+		      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="390" /></td>
+		      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="330" /></td>
+		      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="420" /></td>
+		      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="450" /></td>
+		      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="52" /></td>
+		      <td><input style="color: #dd514c;" class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="2366" /></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<br>
+		<div id="monthCount" style="width:98%; height:450px; border: 1px solid #cccccc; margin-top: 20px; padding: 0 10px;"></div>
+		<br>
+    </div>
+    <div class="tabCon" style="margin: 10px;">
+        <div style="margin-bottom: 20px;">
+          <label>开始月份：</label><input style="width: 125px;" value="2016-07" class="input-text radius size-S Wdate" onfocus="WdatePicker({readOnly:true, dateFmt: 'yyyy-MM', isShowToday: false, isShowClear: false})" />
+          <label style="margin-left: 20px;">结束月份：</label><input style="width: 125px;" value="2016-09" class="input-text radius size-S Wdate" onfocus="WdatePicker({readOnly:true, dateFmt: 'yyyy-MM', isShowToday: false, isShowClear: false})"/>
+          <input style="margin-left: 20px;" class="btn btn-primary radius size-S" type="button" value="查 询">
+        </div>
+        
+        <table>
+          <tr>
+            <td width="220px" style="vertical-align: top;">
+              <table class="table table-border" >
+		          <thead class=" text-c">
+		            <tr>
+		              <th>预约渠道</th>
+		              <th>预约数</th>
+		            </tr>
+		          </thead>
+		          <tbody class=" text-c">
+		            <tr>
+		              <td>官网</td>  
+		              <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="64" /></td>
+		            </tr>
+		            <tr>
+		              <td>电话预约</td>  
+		              <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="332" /></td>
+		            </tr>
+		            <tr>
+		              <td>微信公众号</td>  
+		              <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="83" /></td>
+		            </tr>
+		            <tr>
+		              <td>医护网</td>  
+		              <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="9" /></td>
+		            </tr>
+		            <tr>
+		              <td>118114</td>  
+		              <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="37" /></td>
+		            </tr>
+		            <tr>
+		              <td>就医160</td>  
+		              <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="7" /></td>
+		            </tr>
+		            <tr>
+		              <td>微导医</td>  
+		              <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="34" /></td>
+		            </tr>
+		            <tr>
+                      <th>总数</th>  
+                      <td><input style="color: #dd514c;" class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="566" /></td>
+                    </tr>
+		          </tbody>
+		        </table>
+            </td>
+            <td width="30px;"></td>
+            <td style="vertical-align: top;">
+            <div id="qudaoCount" style="width:98%; height:450px; border: 1px solid #cccccc; padding: 0 10px;"></div>
+            </td>
+          </tr>
+        </table>
+    </div>
+    <div class="tabCon" style="margin: 10px;">
+        <div style="margin-bottom: 20px;">
+          <label>开始月份：</label><input style="width: 125px;" value="2016-07" class="input-text radius size-S Wdate" onfocus="WdatePicker({readOnly:true, dateFmt: 'yyyy-MM', isShowToday: false, isShowClear: false})" />
+          <label style="margin-left: 20px;">结束月份：</label><input style="width: 125px;" value="2016-09" class="input-text radius size-S Wdate" onfocus="WdatePicker({readOnly:true, dateFmt: 'yyyy-MM', isShowToday: false, isShowClear: false})"/>
+          <input style="margin-left: 20px;" class="btn btn-primary radius size-S" type="button" value="查 询">
+        </div>
+        
+        <table>
+          <tr>
+            <td width="220px" style="vertical-align: top;">
+              <table class="table table-border">
+                  <thead class=" text-c">
+                    <tr>
+                      <th>预约科室</th>
+                      <th>预约数</th>
+                    </tr>
+                  </thead>
+                  <tbody class=" text-c">
+                    <tr>
+                      <td>内分泌科</td>  
+                      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="552" /></td>
+                    </tr>
+                    <tr>
+                      <td>皮肤科</td>  
+                      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="22" /></td>
+                    </tr>
+                    <tr>
+                      <td>乳腺外科</td>  
+                      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="55" /></td>
+                    </tr>
+                    <tr>
+                      <td>神经内科</td>  
+                      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="91" /></td>
+                    </tr>
+                    <tr>
+                      <td>消化内科</td>  
+                      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="73" /></td>
+                    </tr>
+                    <tr>
+                      <td>心血管内科</td>  
+                      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="27" /></td>
+                    </tr>
+                    <tr>
+                      <th>总数</th>  
+                      <td><input style="color: #dd514c;" class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="876" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </td>
+            <td width="30px;"></td>
+            <td style="vertical-align: top;">
+            <div id="keshiCount" style="width:98%; height:450px; border: 1px solid #cccccc; padding: 0 10px;"></div>
+            </td>
+          </tr>
+        </table>
+    </div>
+    <div class="tabCon" style="margin: 10px;">
+        <div style="margin-bottom: 20px;">
+          <label>开始月份：</label><input style="width: 125px;" value="2016-07" class="input-text radius size-S Wdate" onfocus="WdatePicker({readOnly:true, dateFmt: 'yyyy-MM', isShowToday: false, isShowClear: false})" />
+          <label style="margin-left: 20px;">结束月份：</label><input style="width: 125px;" value="2016-09" class="input-text radius size-S Wdate" onfocus="WdatePicker({readOnly:true, dateFmt: 'yyyy-MM', isShowToday: false, isShowClear: false})"/>
+          <input style="margin-left: 20px;" class="btn btn-primary radius size-S" type="button" value="查 询">
+        </div>
+        
+        <table>
+          <tr>
+            <td width="220px" style="vertical-align: top;">
+              <table class="table table-border">
+                  <thead class=" text-c">
+                    <tr>
+                      <th>预约专家</th>
+                      <th>预约数</th>
+                    </tr>
+                  </thead>
+                  <tbody class=" text-c">
+                    <tr>
+                      <td>倪文琼</td>  
+                      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="379" /></td>
+                    </tr>
+                    <tr>
+                      <td>李学民</td>  
+                      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="41" /></td>
+                    </tr>
+                    <tr>
+                      <td>赵会亮</td>  
+                      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="19" /></td>
+                    </tr>
+                    <tr>
+                      <td>陈自学</td>  
+                      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="28" /></td>
+                    </tr>
+                    <tr>
+                      <td>张玉红</td>  
+                      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="29" /></td>
+                    </tr>
+                    <tr>
+                      <td>王艳云</td>  
+                      <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="56" /></td>
+                    </tr>
+                    <tr>
+                      <th>总数</th>  
+                      <td><input style="color: #dd514c;" class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="546" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </td>
+            <td width="30px;"></td>
+            <td style="vertical-align: top;">
+            <div id="zjCount" style="width:98%; height:450px; border: 1px solid #cccccc; padding: 0 10px;"></div>
+            </td>
+          </tr>
+        </table>
+    </div>
+  </div>
+  
+  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog"  data-width="90%" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <h4 id="myModalLabel">预约信息列表</h4>
+    <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+  </div>
+	<div class="modal-body">
+	  <table class="table table-border table-striped">
+	  <thead class="text-c">
+	    <tr>
+	      <th>患者</th>
+	      <th>医生</th>
+	      <th>预约信息</th>
+	      <th>挂号信息</th>
+	      <th>状态</th>
+	      <th>短信通知</th>
+	    </tr>
+	  </thead>
+	  <tbody class="text-c">
+	    <tr>
+	      <td>
+	                  李学民<br/>
+	                   男<br/>
+	        13324253435<br/>
+	        612325198811223344
+	      </td>
+	      <td>
+	                  倪文琼 （NWM）<br/>
+	                  主任医师<br/>
+	                  皮肤科
+	      </td>
+	      <td>
+	                  预约码：125604<br/>
+	        2016-09-11<br/>
+	                  星期三 上午 10点~11点
+	      </td>
+	      <td>
+	                  张跃红<br/>
+	        2016-09-07 13:24:28<br/>
+	                  电话预约
+	      </td>
+	      <td>未登记</td>
+	      <td>已发送</td>
+	    </tr>
+	    <tr>
+	      <td>
+	                  温星星<br/>
+	                  男<br/>
+	        18736074409<br/>
+	        411024199309264725
+	      </td>
+	      <td>
+	                  倪文琼 （NWM）<br/>
+	                  主任医师<br/>
+	                  皮肤科
+	      </td>
+	      <td>
+	                  预约码：125645<br/>
+	        2016-09-16<br/>
+	                  星期三 下午 15点~16点
+	      </td>
+	      <td>
+	                  张跃红<br/>
+	        2016-09-04 10:33:44<br/>
+	                  电话预约
+	      </td>
+	      <td>未登记</td>
+	      <td>已发送</td>
+	    </tr>
+	    <tr>
+	      <td>
+	                  黄莎莎<br/>
+	                  女<br/>
+	        18629298080<br/>
+	        612325199102032323
+	      </td>
+	      <td>
+	                  李学民 （LXM）<br/>
+	                  主任医师<br/>
+	                  肝胆胰外科
+	      </td>
+	      <td>
+	                  预约码：125655<br/>
+	        2016-09-12<br/>
+	                  星期二 上午 9点~10点
+	      </td>
+	      <td>
+	                  张萌<br/>
+	        2016-09-02 14:22:25<br/>
+	                  电话预约
+	      </td>
+	      <td>未登记</td>
+	      <td>已发送</td>
+	    </tr>
+	  </tbody>
+    </table>
+    <p/>
+<div id="page" style="text-align:center;"></div>
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-success radius size-S">导出Excel</button>
+      <button class="btn radius size-S" data-dismiss="modal" aria-hidden="true">关 闭</button>
+  </div>
+</div>
+
+<script type="text/javascript" src="../../js/lib/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/lib/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../js/lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="../../js/lib/echarts/theme/macarons.js"></script>
+<script type="text/javascript" src="../../js/lib/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="../../js/H-ui/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="../../js/H-ui/lib/bootstrap-modal/2.2.4/bootstrap-modalmanager.js"></script>
+<script type="text/javascript" src="../../js/H-ui/lib/bootstrap-modal/2.2.4/bootstrap-modal.js"></script>
+
+<script type="text/javascript">
+$(function() {
+    laypage({
+        cont: 'page',
+        pages: 3,
+        skin: '#00AA91',
+        groups: 10
+    });
+    
+    $.Huitab("#tab_demo .tabBar span", "#tab_demo .tabCon", "current", "click", "0");
+    
+    var monthCountChart = echarts.init(document.getElementById("monthCount"), window.macaronsTheme);
+    var monthCountOption = {
+        title: {
+            text: "预约量对比"
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data:[''],
+            y:8
+        },
+        grid: {
+            x:80,
+            x2:50,
+            y2:50
+        },
+        xAxis: {
+            type : 'category',
+            show: 'true',
+            data : ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月'],
+            axisLabel:{
+                interval:'0'
+               // rotate: 35
+            }
+        },
+        yAxis: {
+             type : 'value'
+        },
+        toolbox: {
+            show : true,
+            orient: 'horizontal',
+            x: 'right',
+            y: 'top',
+            feature : {
+                magicType: {show: true, type: ['line']},
+                restore: {show: true},
+                saveAsImage: {show: true}
+            }
+        },
+        series: [
+            {
+                name:'',
+                type:'bar',
+                data:[100, 90, 200, 334, 390, 330, 420, 450, 52]
+            }
+        ]
+    };
+    monthCountChart.setOption(monthCountOption);
+    
+    var qudaoCountChart;
+    $("#tab2").click(function() {
+        if (qudaoCountChart != null) {
+            return;
+        }
+    
+        qudaoCountChart = echarts.init(document.getElementById('qudaoCount'), window.macaronsTheme); 
+	    var qudaoCountOption = {
+	        title : {
+	        text: '预约渠道统计',
+	        x:'center'
+	    },
+	    tooltip : {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b} : {c} ({d}%)"
+	    },
+	    legend: {
+	        orient: 'vertical',
+	        left: 'left',
+	        data: ['官网','预约电话','微信公众号','医护网','118114','就医160','微导诊']
+	    },
+	    series : 
+	        [{
+	            name: '预约数',
+	            type: 'pie',
+	            radius : '55%',
+	            center: ['50%', '60%'],
+	            data:[
+	                {value:64, name:'官网'},
+	                {value:332, name:'预约电话'},
+	                {value:83, name:'微信公众号'},
+	                {value:9, name:'医护网'},
+	                {value:37, name:'118114'},
+	                {value:7, name:'就医160'},
+	                {value:34, name:'微导诊'}
+	            ],
+	            itemStyle: {
+	                emphasis: {
+	                    shadowBlur: 10,
+	                    shadowOffsetX: 0,
+	                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+	                }
+	            }
+	        }]
+	    };
+        qudaoCountChart.setOption(qudaoCountOption);
+    });
+    
+    var keshiCountChart;
+    $("#tab3").click(function() {
+        if (keshiCountChart != null) {
+            return;
+        }
+    
+        keshiCountChart = echarts.init(document.getElementById('keshiCount'), window.macaronsTheme); 
+        var keshiCountOption = {
+            title : {
+            text: '预约科室统计',
+            x:'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: ['内分泌科','皮肤科','乳腺外科','神经内科','消化内科','内血管内科']
+        },
+        series : 
+            [{
+                name: '预约数',
+                type: 'pie',
+                radius : '55%',
+                center: ['50%', '60%'],
+                data:[
+                    {value:552, name:'内分泌科'},
+                    {value:22, name:'皮肤科'},
+                    {value:55, name:'乳腺外科'},
+                    {value:91, name:'神经内科'},
+                    {value:73, name:'消化内科'},
+                    {value:27, name:'心血管内科'}
+                ],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }]
+        };
+        keshiCountChart.setOption(keshiCountOption);
+    });
+    
+    var zjCountChart;
+    $("#tab4").click(function() {
+        if (zjCountChart != null) {
+            return;
+        }
+    
+        zjCountChart = echarts.init(document.getElementById('zjCount'), window.macaronsTheme); 
+        var zjCountOption = {
+            title : {
+            text: '预约专家统计',
+            x:'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data: ['倪文琼','李学民','赵会亮','陈自学','张玉红','王艳云']
+        },
+        series : 
+            [{
+                name: '预约数',
+                type: 'pie',
+                radius : '55%',
+                center: ['50%', '60%'],
+                data:[
+                    {value:379, name:'倪文琼'},
+                    {value:41, name:'李学民'},
+                    {value:19, name:'赵会亮'},
+                    {value:28, name:'陈自学'},
+                    {value:29, name:'张玉红'},
+                    {value:56, name:'王艳云'}
+                ],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }]
+        };
+        zjCountChart.setOption(zjCountOption);
+    });
+    
+})
+</script>
+</body>
+</html>

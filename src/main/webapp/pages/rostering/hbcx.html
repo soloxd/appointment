@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="../../js/lib/jquery-1.9.1.min.js"></script>
+<script src="../../js/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../js/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../../js/H-ui/static/h-ui/css/H-ui.reset.css" />
+<style type="text/css">
+.form-inline {
+    margin: 10px;
+}
+</style>
+</head>
+<body style="margin: 10px;">
+    <div class="form-inline">
+        <select class="form-control">
+            <option>内科</option>
+        </select>
+        <select class="form-control">
+            <option>风湿免疫科</option>
+            <option>感染性疾病科</option>
+            <option>呼内二科</option>
+            <option>呼内一科</option>
+            <option>呼吸内科</option>
+            <option>老年心内科</option>
+            <option>老年医学科</option>
+            <option>内分泌二科</option>
+            <option>内分泌科</option>
+            <option>内分泌一科</option>
+            <option>肾病风湿科</option>
+            <option>神经内科</option>
+            <option>神内二科</option>
+            <option>神内三科</option>
+            <option>神内一科</option>
+            <option>消化内科</option>
+            <option>心内二科</option>
+            <option>心内三科</option>
+            <option>心内四科</option>
+            <option>心内五科</option>
+            <option>心内一科</option>
+            <option>心血管内科</option>
+            <option>血液科</option>
+            <option>血液内科</option>
+        </select>
+        <button class="btn btn-primary">查询</button>
+    </div>
+    <table class="table table-border table-striped">
+        <thead>
+            <tr>
+                <th>日期</th>
+                <th>出诊类别</th>
+                <th>出诊医师</th>
+                <th>班次</th>
+                <th>限号数</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2016-09-19</td>
+                <td>副主任医师</td>
+                <td>陈自学</td>
+                <td>星期五上午09时-10时</td>
+                <td>10</td>
+                <td><a href="#" data-toggle="modal" data-target="#edit-dialog"><span class="glyphicon glyphicon-pencil"></span></a>
+                <!--  <a href="#" data-toggle="modal" data-target="#record-dialog"><span class="glyphicon glyphicon-paperclip"></span></a> --></td>
+            </tr>
+            <tr>
+                <td>2016-09-19</td>
+                <td>副主任医师</td>
+                <td>陈自学</td>
+                <td>星期五上午10时-11时</td>
+                <td>10</td>
+                <td><a href="#" data-toggle="modal" data-target="#edit-dialog"><span class="glyphicon glyphicon-pencil"></span></a>
+                <!--  <a href="#" data-toggle="modal" data-target="#record-dialog"><span class="glyphicon glyphicon-paperclip"></span></a> --></td>
+            </tr>
+            <tr>
+                <td>2016-09-19</td>
+                <td>副主任医师</td>
+                <td>陈自学</td>
+                <td>星期五上午11时-12时</td>
+                <td>10</td>
+                <td><a href="#" data-toggle="modal" data-target="#edit-dialog"><span class="glyphicon glyphicon-pencil"></span></a>
+                <!--  <a href="#" data-toggle="modal" data-target="#record-dialog"><span class="glyphicon glyphicon-paperclip"></span></a> --></td>
+            </tr>
+            <tr>
+                <td>2016-09-19</td>
+                <td>副主任医师</td>
+                <td>陈自学</td>
+                <td>星期五下午12时-13时</td>
+                <td>10</td>
+                <td><a href="#" data-toggle="modal" data-target="#edit-dialog"><span class="glyphicon glyphicon-pencil"></span></a>
+                <!--  <a href="#" data-toggle="modal" data-target="#record-dialog"><span class="glyphicon glyphicon-paperclip"></span></a> --></td>
+            </tr>
+            <tr>
+                <td>2016-09-19</td>
+                <td>副主任医师</td>
+                <td>陈自学</td>
+                <td>星期五下午13时-14时</td>
+                <td>10</td>
+                <td><a href="#" data-toggle="modal" data-target="#edit-dialog"><span class="glyphicon glyphicon-pencil"></span></a>
+                <!--  <a href="#" data-toggle="modal" data-target="#record-dialog"><span class="glyphicon glyphicon-paperclip"></span></a> --></td>
+            </tr>
+            <tr>
+                <td>2016-09-19</td>
+                <td>副主任医师</td>
+                <td>陈自学</td>
+                <td>星期五下午14时-15时</td>
+                <td>10</td>
+                <td><a href="#" data-toggle="modal" data-target="#edit-dialog"><span class="glyphicon glyphicon-pencil"></span></a>
+                <!--  <a href="#" data-toggle="modal" data-target="#record-dialog"><span class="glyphicon glyphicon-paperclip"></span></a> --></td>
+            </tr>
+            <tr>
+                <td>2016-09-19</td>
+                <td>副主任医师</td>
+                <td>陈自学</td>
+                <td>星期五下午15时-16时</td>
+                <td>10</td>
+                <td><a href="#" data-toggle="modal" data-target="#edit-dialog"><span class="glyphicon glyphicon-pencil"></span></a>
+                <!--  <a href="#" data-toggle="modal" data-target="#record-dialog"><span class="glyphicon glyphicon-paperclip"></span></a> --></td>
+            </tr>
+            <tr>
+                <td>2016-09-19</td>
+                <td>副主任医师</td>
+                <td>陈自学</td>
+                <td>星期五下午16时-17时</td>
+                <td>10</td>
+                <td><a href="#" data-toggle="modal" data-target="#edit-dialog"><span class="glyphicon glyphicon-pencil"></span></a>
+                <!--  <a href="#" data-toggle="modal" data-target="#record-dialog"><span class="glyphicon glyphicon-paperclip"></span></a> --></td>
+            </tr>
+            <tr>
+                <td>2016-09-19</td>
+                <td>副主任医师</td>
+                <td>陈自学</td>
+                <td>星期五下午17时-18时</td>
+                <td>10</td>
+                <td><a href="#" data-toggle="modal" data-target="#edit-dialog"><span class="glyphicon glyphicon-pencil"></span></a>
+                <!--  <a href="#" data-toggle="modal" data-target="#record-dialog"><span class="glyphicon glyphicon-paperclip"></span></a> --></td>
+            </tr>
+            <tr>
+                <td>2016-09-19</td>
+                <td>副主任医师</td>
+                <td>陈自学</td>
+                <td>星期六上午09时-10时</td>
+                <td>10</td>
+                <td><a href="#" data-toggle="modal" data-target="#edit-dialog"><span class="glyphicon glyphicon-pencil"></span></a>
+                <!--  <a href="#" data-toggle="modal" data-target="#record-dialog"><span class="glyphicon glyphicon-paperclip"></span></a> --></td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="edit-dialog" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">修改</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">日期</label>
+                            <div class="col-sm-10">
+                                <input class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">出诊类别</label>
+                            <div class="col-sm-10">
+                                <input class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">出诊医师</label>
+                            <div class="col-sm-10">
+                                <select class="form-control">
+                                    <option>陈自学</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">班次</label>
+                            <div class="col-sm-10">
+                                <select class="form-control">
+                                    <option>星期六上午09时-10时</option>
+                                    <option>星期六上午09时-10时</option>
+                                    <option>星期六上午09时-10时</option>
+                                    <option>星期六上午09时-10时</option>
+                                    <option>星期六上午09时-10时</option>
+                                    <option>星期六上午09时-10时</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">限号数</label>
+                            <div class="col-sm-10">
+                                <input class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="min-height: 0px; max-height: 150px; overflow: auto;">
+                        <table class="table table-border table-striped">
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>调整时间</th>
+                                    <th>调整类别</th>
+                                    <th>调整方法</th>
+                                    <th>修改内容</th>
+                                    <th>修改人</th>
+                                    <th>修改时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <th>2016-09-20</th>
+                                    <th>主任医师</th>
+                                    <th>修改</th>
+                                    <th>增加号数</th>
+                                    <th>admin</th>
+                                    <th>2018-09-18 15:19:23</th>
+                                </tr>
+                                <tr>
+                                    <th>1</th>
+                                    <th>2016-09-20</th>
+                                    <th>主任医师</th>
+                                    <th>修改</th>
+                                    <th>增加号数</th>
+                                    <th>admin</th>
+                                    <th>2018-09-18 15:19:23</th>
+                                </tr>
+                                <tr>
+                                    <th>1</th>
+                                    <th>2016-09-20</th>
+                                    <th>主任医师</th>
+                                    <th>修改</th>
+                                    <th>增加号数</th>
+                                    <th>admin</th>
+                                    <th>2018-09-18 15:19:23</th>
+                                </tr>
+                                <tr>
+                                    <th>1</th>
+                                    <th>2016-09-20</th>
+                                    <th>主任医师</th>
+                                    <th>修改</th>
+                                    <th>增加号数</th>
+                                    <th>admin</th>
+                                    <th>2018-09-18 15:19:23</th>
+                                </tr>
+                                <tr>
+                                    <th>1</th>
+                                    <th>2016-09-20</th>
+                                    <th>主任医师</th>
+                                    <th>修改</th>
+                                    <th>增加号数</th>
+                                    <th>admin</th>
+                                    <th>2018-09-18 15:19:23</th>
+                                </tr>
+                                <tr>
+                                    <th>1</th>
+                                    <th>2016-09-20</th>
+                                    <th>主任医师</th>
+                                    <th>修改</th>
+                                    <th>增加号数</th>
+                                    <th>admin</th>
+                                    <th>2018-09-18 15:19:23</th>
+                                </tr>
+                                <tr>
+                                    <th>1</th>
+                                    <th>2016-09-20</th>
+                                    <th>主任医师</th>
+                                    <th>修改</th>
+                                    <th>增加号数</th>
+                                    <th>admin</th>
+                                    <th>2018-09-18 15:19:23</th>
+                                </tr>
+                                <tr>
+                                    <th>1</th>
+                                    <th>2016-09-20</th>
+                                    <th>主任医师</th>
+                                    <th>修改</th>
+                                    <th>增加号数</th>
+                                    <th>admin</th>
+                                    <th>2018-09-18 15:19:23</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="record-dialog" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title">出诊安排调整</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-border table-striped">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>调整时间</th>
+                                <th>调整类别</th>
+                                <th>调整方法</th>
+                                <th>修改内容</th>
+                                <th>修改人</th>
+                                <th>修改时间</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

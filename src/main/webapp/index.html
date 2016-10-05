@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>郑州中心医院预约挂号统</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+
+<link rel="Shortcut Icon" href="favicon.ico" />
+<link rel="stylesheet" type="text/css" href="js/H-ui/static/h-ui/css/H-ui.css" />
+<link rel="stylesheet" type="text/css" href="js/H-ui/lib/Hui-iconfont/1.0.7/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="css/onstage/index.css" />
+<link rel="stylesheet" type="text/css" href="css/onstage/doctor.css" />
+
+<script src="js/lib/jquery-1.9.1.min.js"></script>
+<script src="js/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/lib/knockout-3.4.0.js"></script>
+<script src="js/index.js"></script>
+
+<style type="text/css">
+.container{padding-left: 0; padding-right: 0;}
+td ul {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 20px;
+}
+td ul li{float: left; margin-right: 35px; list-style: none; box-sizing: border-box;  display: list-item;
+    text-align: -webkit-match-parent; height: 25px;}
+td ul li span {cursor: pointer;}
+a {
+    text-decoration: none; 
+}
+a:hover{
+text-decoration:none;
+}
+.active {
+    color: #0989ee;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="container">
+            <div class="header">
+                <img src="images/onstage/logo.jpg">
+                <div class="nav">
+                    <a href="javascript:void(0)">首页</a>
+                    <a href="pages/onstage/patientApptQuery.html">个人中心</a>
+                </div>
+            </div>
+    </div>
+<!--     
+        <div class="notice">
+            <p>
+                <i class="Hui-iconfont">&#xe62f;</i>
+                <marquee scrollamount="3" behavior="scroll" direction="left">
+                        <a href="javascript:void(0)">【通知】妇一科主任医师张恩娣7月27日—9月30日每周周三下午停诊；儿童保健科副主任医师宋晓红9月1日—9月30日停诊;妇一科副主任医师齐进9月19日—12月18日停诊；妇女保健科主任医师李芳9月20日—9月22日停诊；妇女保健科副主任医师王萍9月21日—9月23日停诊。产一科主任医师曹引丽、主任医师雷菊玲、副主任医师俞春芝；产三科主任医师董晋；妇三科主任医师何菊仙；妇四科主任医师余亚莉；乳腺科主任医师王俊鹏，以上医师8月15日起停后宰门院区门诊。</a>
+                        <a href="javascript:void(0)">【通知】为缓解网络拥堵，自2月1日起，产科预约挂号放号时间进行调整，产一科调整为每晚19:30放号、产二科20:30、产三科21:00，其他科室每晚20:00放号，维持不变，望周知。</a>
+                        <a href="javascript:void(0)">【公告】预约平台改版了，请使用身份证号或出生证号登陆，忘记密码或密码不正确的患者请重置密码</a>
+                </marquee>
+            </p>
+        </div>
+ -->        
+        <div class="process">
+            <img src="images/onstage/process.png">
+        </div>
+        <div class="tabs">
+            <dl>
+                <dt>
+                    <label style="margin-left: 20px;">开放预约科室</label>
+                </dt>
+                <dd style="display: block;">
+                    
+                    <div class="department" style="padding: 5px 20px;">
+                        <table>
+                            <tr>
+                                <td style="width:60px ;vertical-align: top;"><ul style="-webkit-padding-start: 0px;">一级科室：</ul></td>
+                                <td>
+                                <ul data-bind="foreach: top.children">
+                                    <li><span data-bind="text: name, click: active, attr: {class: actived() ? 'active' : ''}"></span></li>
+                                  </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style=""><hr style="height:1px;border:none;border-top:1px dashed #0066CC;" /></td>
+                            </tr>
+                            <tr>
+                                <td>二级科室：</td>
+                                <td>
+                                    <ul data-bind="foreach: secondary">
+                                        <li><span data-bind="text: name, click: active, attr: {class: actived() ? 'active' : ''}"></span></li>
+									</ul>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                        
+                </dd>
+            </dl>
+            <div class="personal-login" style="display: block; height: 258px;">
+                <b class="mandatory-index" id="prompt"></b>
+                <h4>登录</h4>
+                <p><label style="font-size: 12px;">证件号</label><input type="text" id="username" value=""></p>
+                <p><label style="font-size: 12px;">登录密码</label><input type="password" id="password" value=""></p>
+                <p><label style="font-size: 12px;">验证码</label><input type="text" style="width:66px;" id="validateCode"><em><img src="images/onstage/imageServlet" +="" new="" date()="" title="看不清？点击刷新" id="validateImg" onclick="javascript:void(0)" style="cursor:pointer;"></em></p>
+                <span>
+                    <a href="javascript:void(0)" class="loging">登录</a>
+                    <a href="javascript:void(0)">注册</a>
+                </span>
+            </div>
+        </div>
+         <div class="ys-hospital">
+        <div class="map-layer" id="map-layer">
+            <div class="container-tab-content">
+                <article class="container-main">
+                    <div id="allDoctor" class="tab-allDoctor">
+
+                        <div class="container-doctor">
+                            <ul class="list-doctors" id="list-doctor"
+                                data-mod="ic-doctor-list">
+                                <li><p class="doctor-photo">
+                                        <a class="ys-img-lazy-frame" target="_blank" href="javascript:void(0)">
+                                            <img class="" alt="李玉杰"
+                                                src="images/onstage/doctor_nan.jpg"
+                                                style="height: 100%;">
+                                        </a>
+                                    </p>
+                                    <article class="doctor-info">
+                                        <div class="docitem-name">
+                                            <span class="doctor-name">
+                                                <a class="a-hover" target="_blank" href="javascript:void(0)">李玉杰</a>
+                                            </span>
+                                            <label class="doctor-identify"></label>
+                                            <span class="ys-util-margin-lr5">主任医师</span>
+
+                                        </div>
+                                        <p class="docitem-hospital">
+                                            <span>
+                                                <a href="javascript:void(0)" class="a-hover">郑州大学附属郑州中心医院</a>
+                                            </span>
+                                            &nbsp;&nbsp;&nbsp;
+                                            <span>
+                                                <a href="javascript:void(0)" title="耳鼻咽喉头颈外科" class="a-hover">耳鼻咽喉头颈外科</a>
+                                            </span>
+                                        </p>
+                                        <p class="docitem-skill" title="耳鼻咽喉头颈外科。">擅长：&nbsp;耳鼻咽喉头颈外科。</p>
+
+                                    </article>
+                                    <dl class="appointment-time">
+                                        <div class="statusFull">已约满</div>
+                                    </dl></li>
+                                <li><p class="doctor-photo">
+                                        <a class="ys-img-lazy-frame" target="_blank" href="javascript:void(0)">
+                                            <img class="" alt="李玉杰"
+                                                src="images/onstage/doctor_nan.jpg"
+                                                style="height: 100%;">
+                                        </a>
+                                    </p>
+                                    <article class="doctor-info">
+                                        <div class="docitem-name">
+                                            <span class="doctor-name">
+                                                <a class="a-hover" target="_blank" href="javascript:void(0)">李玉杰</a>
+                                            </span>
+                                            <label class="doctor-identify"></label>
+                                            <span class="ys-util-margin-lr5">主任医师</span>
+
+                                        </div>
+                                        <p class="docitem-hospital">
+                                            <span>
+                                                <a href="javascript:void(0)" class="a-hover">郑州大学附属郑州中心医院</a>
+                                            </span>
+                                            &nbsp;&nbsp;&nbsp;
+                                            <span>
+                                                <a href="javascript:void(0)" title="耳鼻咽喉头颈外科" class="a-hover">耳鼻咽喉头颈外科</a>
+                                            </span>
+                                        </p>
+                                        <p class="docitem-skill" title="耳鼻咽喉头颈外科。">擅长：&nbsp;耳鼻咽喉头颈外科。</p>
+
+                                    </article>
+                                    <dl class="appointment-time">
+                                        <div class="statusFull">已约满</div>
+                                    </dl></li>
+                                <li><p class="doctor-photo">
+                                        <a class="ys-img-lazy-frame" target="_blank" href="javascript:void(0)">
+                                            <img class="" alt="李玉杰"
+                                                src="images/onstage/doctor_nan.jpg"
+                                                style="height: 100%;">
+                                        </a>
+                                    </p>
+                                    <article class="doctor-info">
+                                        <div class="docitem-name">
+                                            <span class="doctor-name">
+                                                <a class="a-hover" target="_blank" href="javascript:void(0)">李玉杰</a>
+                                            </span>
+                                            <label class="doctor-identify"></label>
+                                            <span class="ys-util-margin-lr5">主任医师</span>
+
+                                        </div>
+                                        <p class="docitem-hospital">
+                                            <span>
+                                                <a href="javascript:void(0)" class="a-hover">郑州大学附属郑州中心医院</a>
+                                            </span>
+                                            &nbsp;&nbsp;&nbsp;
+                                            <span>
+                                                <a href="javascript:void(0)" title="耳鼻咽喉头颈外科" class="a-hover">耳鼻咽喉头颈外科</a>
+                                            </span>
+                                        </p>
+                                        <p class="docitem-skill" title="耳鼻咽喉头颈外科。">擅长：&nbsp;耳鼻咽喉头颈外科。</p>
+
+                                    </article>
+                                    <dl class="appointment-time">
+                                        <div class="statusFull"><a href="pages/onstage/patientRegister.html" class="guahao">预约挂号</a></div>
+                                    </dl></li>
+                                <li><p class="doctor-photo">
+                                        <a class="ys-img-lazy-frame" target="_blank" href="javascript:void(0)">
+                                            <img class="" alt="李玉杰"
+                                                src="images/onstage/doctor_nan.jpg"
+                                                style="height: 100%;">
+                                        </a>
+                                    </p>
+                                    <article class="doctor-info">
+                                        <div class="docitem-name">
+                                            <span class="doctor-name">
+                                                <a class="a-hover" target="_blank" href="javascript:void(0)">李玉杰</a>
+                                            </span>
+                                            <label class="doctor-identify"></label>
+                                            <span class="ys-util-margin-lr5">主任医师</span>
+
+                                        </div>
+                                        <p class="docitem-hospital">
+                                            <span>
+                                                <a href="javascript:void(0)" class="a-hover">郑州大学附属郑州中心医院</a>
+                                            </span>
+                                            &nbsp;&nbsp;&nbsp;
+                                            <span>
+                                                <a href="javascript:void(0)" title="耳鼻咽喉头颈外科" class="a-hover">耳鼻咽喉头颈外科</a>
+                                            </span>
+                                        </p>
+                                        <p class="docitem-skill" title="耳鼻咽喉头颈外科。">擅长：&nbsp;耳鼻咽喉头颈外科。</p>
+
+                                    </article>
+                                    <dl class="appointment-time">
+                                        <div class="statusFull"><a href="pages/onstage/gerenGuahao.html" class="guahao">预约挂号</a></div>
+                                    </dl></li>
+                                <li><p class="doctor-photo">
+                                        <a class="ys-img-lazy-frame" target="_blank" href="javascript:void(0)">
+                                            <img class="" alt="李玉杰"
+                                                src="images/onstage/doctor_nan.jpg"
+                                                style="height: 100%;">
+                                        </a>
+                                    </p>
+                                    <article class="doctor-info">
+                                        <div class="docitem-name">
+                                            <span class="doctor-name">
+                                                <a class="a-hover" target="_blank" href="javascript:void(0)">李玉杰</a>
+                                            </span>
+                                            <label class="doctor-identify"></label>
+                                            <span class="ys-util-margin-lr5">主任医师</span>
+
+                                        </div>
+                                        <p class="docitem-hospital">
+                                            <span>
+                                                <a href="javascript:void(0)" class="a-hover">郑州大学附属郑州中心医院</a>
+                                            </span>
+                                            &nbsp;&nbsp;&nbsp;
+                                            <span>
+                                                <a href="javascript:void(0)" title="耳鼻咽喉头颈外科" class="a-hover">耳鼻咽喉头颈外科</a>
+                                            </span>
+                                        </p>
+                                        <p class="docitem-skill" title="耳鼻咽喉头颈外科。">擅长：&nbsp;耳鼻咽喉头颈外科。</p>
+
+                                    </article>
+                                    <dl class="appointment-time">
+                                        <div class="statusFull"><a href="pages/onstage/patientRegister.html" class="guahao">预约挂号</a></div>
+                                    </dl></li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </article>
+            </div>
+        </div>
+    </div>
+    <div class="footer" style="padding: 0;">
+            <ul>
+                <li>地址：郑州市中原区桐柏路195号（桐柏路与协作路交叉口）| 咨询台:0371-67690000</li>
+                <li>版权所有 京ICP备05056889号</li>
+            </ul>
+        </div>
+    </div>
+    <br/>
+</body></html>

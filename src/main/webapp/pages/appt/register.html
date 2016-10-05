@@ -1,0 +1,385 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="js/H-ui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="js/bootstrap/css/bootstrap.min.css" />
+<style type="text/css">
+body {
+	overflow: hidden;
+}
+
+.split {
+	padding: 10px 0;
+}
+
+.doctor-items {
+	width: 100%;
+	margin: 0px 0;
+	margin: 0;
+	height: 500px;
+	overflow: auto;
+}
+
+.issue {
+	border: 1px solid #ddd;
+	width: 15%;
+	min-width: 160px;
+	padding: 0 10px;
+	float: left;
+	margin: 10px 0 0 10px;
+}
+
+.issue:HOVER {
+	background-color: #f8f8f8;
+	cursor: pointer;
+}
+
+.doctor {
+	color: blue;
+	font-weight: bold;
+}
+
+.number {
+	width: 60%;
+	display: inline-block;
+}
+
+.count {
+	display: inline-block;
+	font-weight: bold;
+}
+
+.time {
+	
+}
+
+label.require:before {
+	content: '* ';
+	font-family: 'FontAwesome';
+	color: red;
+}
+
+.short {
+	width: 150px !important;
+}
+</style>
+<script type="text/javascript">
+	$(function() {
+		$('.doctor-items').height(
+				$(document).height() - $('.form-inline').height()
+						- $('.navbar-fixed-bottom').height() - 30);
+
+		$('.navbar-default input').bind('change', function() {
+			$('#patient-dialog').modal('show');
+		});
+		
+		$('table tr').bind('click', function() {
+			$.each($(this).find('td'), function(){
+				$('.navbar-default #' + $(this).attr('id')).val($(this).text());
+			});
+			$('#patient-dialog').modal('hide');
+		});
+		
+		$('.issue').bind('click', function() {
+			$('.navbar-default #number').val($(this).find('.number').text());
+		});
+	});
+</script>
+</head>
+<body style="margin: 10px;">
+	<div class="form-inline split">
+		<div class="form-group ">
+			<label class="control-label">挂号日期</label> <select class="form-control">
+				<option>2016-09-16</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label class="control-label">科室</label> <select class="form-control">
+				<optgroup label="内科">
+					<option>风湿免疫科</option>
+					<option>感染性疾病科</option>
+				</optgroup>
+			</select>
+		</div>
+		<div class="form-group">
+			<label class="control-label">医生</label> <input class="form-control" />
+		</div>
+		<div class="form-group">
+			<label class="control-label">挂号午别</label> <select class="form-control">
+				<option>星期六下午</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<button class="btn btn-primary">查询</button>
+		</div>
+	</div>
+	<div class="doctor-items">
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+		<div class="issue">
+			<div class="doctor">杨改清</div>
+			<span class="number">00035</span><span class="count">10</span>
+			<div class="time">星期六下午15时-16时</div>
+		</div>
+	</div>
+
+	<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+		<div class="container-fluid">
+			<div class="form-inline split">
+				<div class="form-group">
+					<label class="control-label require">手机</label> <input id="phone" class="form-control short" />
+				</div>
+				<div class="form-group">
+					<label class="control-label">姓名</label> <input id="name" class="form-control short" disabled />
+				</div>
+				<div class="form-group">
+					<label class="control-label">身份证号</label> <input id="id" class="form-control" disabled />
+				</div>
+				<div class="form-group" >
+					<label class="control-label">性别</label> <select id="sex" class="form-control" disabled>
+						<option>男</option>
+						<option>女</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label class="control-label">号别</label> <input id="number" class="form-control short" disabled />
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary">预约</button>
+				</div>
+			</div>
+
+		</div>
+	</nav>
+
+	<div id="patient-dialog" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title">患者</h4>
+				</div>
+				<div class="modal-body form-inline">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>姓名</th>
+								<th>性别</th>
+								<th>身份证号</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td id="name">李晓丽</td>
+								<td id="sex">女</td>
+								<td id="id">641001198709072298</td>
+							</tr>
+							<tr>
+								<td id="name">李晓东</td>
+								<td id="sex">男</td>
+								<td id="id">641001195709072258</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

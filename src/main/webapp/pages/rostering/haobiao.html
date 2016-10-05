@@ -1,0 +1,475 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="../../js/H-ui/static/h-ui/css/H-ui.css" />
+<style type="text/css">
+.table th, .table td {
+    padding: 4px;
+    line-height: 18px;
+    word-break: break-all;
+}
+</style>
+
+</head>
+<body style="margin: 10px;">
+  <div style="margin-bottom: 20px;">
+    <label>一级科室：</label>
+    <select style="width: 150px; height: 24px; margin-top: 3px;" class="select" size="1" name="demo1">
+        <option value="" selected>全部</option>
+        <option value="1">内科</option>
+        <option value="2">外科</option>
+        <option value="3">妇产科</option>
+        <option value="4">儿科</option>
+        <option value="4">骨科</option>
+        <option value="4">口腔科</option>
+        <option value="4">眼科</option>
+        <option value="4">中医科</option>
+        <option value="4">精神心理科</option>
+        <option value="4">皮肤性病科</option>
+        <option value="4">整形科</option>
+        <option value="4">肿瘤科</option>
+        <option value="4">男科</option>
+        <option value="4">疼痛科</option>
+        <option value="4">耳鼻喉科</option>
+        <option value="4">重症医学科</option>
+        <option value="4">急诊科</option>
+        <option value="4">临床其他</option>
+    </select>
+    <label style="margin-left: 20px;">二级科室：</label>
+    <select style="width: 150px; height: 24px; margin-top: 3px;" class="select" size="1" name="demo1">
+        <option value="" selected>全部</option>
+        <option value="1">风湿免疫科</option>
+        <option value="2">感染性疾病科</option>
+        <option value="3">呼吸内科 </option>
+        <option value="4">呼内一科</option>
+        <option value="4">呼内二科</option>
+        <option value="4">老年心内科</option>
+        <option value="4">老年医学科</option>
+        <option value="4">内分泌科</option>
+        <option value="4">内分泌一科</option>
+        <option value="4">内分泌二科</option>
+        <option value="4">肾病风湿科</option>
+        <option value="4">神经内科</option>
+        <option value="4">神内一科</option>
+        <option value="4">神内二科</option>
+        <option value="4">神内三科</option>
+        <option value="4">消化内科</option>
+        <option value="4">心内一科</option>
+        <option value="4">心内二科</option>
+        <option value="4">心内三科</option>
+        <option value="4">心内四科</option>
+        <option value="4">心内五科</option>
+        <option value="4">心血管内科</option>
+        <option value="4">血液科</option>
+        <option value="4">血液内科</option>
+    </select>                                                      
+    <input style="margin-left: 20px;" class="btn btn-primary radius size-S" type="button" value="查 询">
+  </div>  
+
+
+<table class="table table-border table-hover table-bg">
+  <thead class="text-c">
+    <tr>
+      <th>姓名</th>
+      <th>职称</th>
+      <th>科室</th>
+      <th>助记符</th>
+      <th>工号</th>
+      <th>可预约</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody class="text-c">
+    <tr>
+      <td>倪文琼</th>
+      <td>主任医师</td>
+      <td>皮肤科</td>
+      <td>NWM</td>
+      <td>000022</td>
+      <td>是</td>
+      <td>
+      <input class="btn btn-link radius size-S" type="button" href="#myModal" data-toggle="modal" value="配置">
+      </td>
+    </tr>
+    <tr>
+      <td>赵会亮</th>
+      <td>副主任医师</td>
+      <td>皮肤科</td>
+      <td>ZHL</td>
+      <td>000023</td>
+      <td>是</td>
+      <td>
+      <input class="btn btn-link radius size-S" type="button" href="#myModal" data-toggle="modal" value="配置">
+      </td>
+    </tr>
+    <tr>
+      <td>陈自学</th>
+      <td>副主任医师</td>
+      <td>皮肤科</td>
+      <td>CZX</td>
+      <td>000025</td>
+      <td>是</td>
+      <td>
+      <input class="btn btn-link radius size-S" type="button" href="#myModal" data-toggle="modal" value="配置">
+      </td>
+    </tr>
+    <tr>
+      <td>张玉红</th>
+      <td>副主任医师</td>
+      <td>皮肤科</td>
+      <td>ZHY</td>
+      <td>000027</td>
+      <td>是</td>
+      <td>
+      <input class="btn btn-link radius size-S" type="button" href="#myModal" data-toggle="modal" value="配置">
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br/><br/>
+
+<!-- <div id="ajaxModal" class="modal hide fade" tabindex="-1" data-width="85%" style=""></div> -->
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" data-width="80%" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <h4 id="myModalLabel">配置</h4>
+    <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+  </div>
+  <div class="modal-body">
+    <table class="table table-border table-bordered">
+	  <thead >
+	  <tr class="text-l">
+	    <th style="height: 25px;" colspan="14">医生：张三　　　　所属科室：皮肤科　　　　2016年9月
+	       <div style="float: right; margin-right: 10px; color: #dd514c;">默认挂号人数： <input class="input-text radius size-MINI" style="width: 30px;" value="5"></div>
+	    </th>
+	  </tr>
+	  <tr class="text-c">
+        <td colspan="2">周日</td>
+	    <td colspan="2">周一</td>
+	    <td colspan="2">周二</td>
+	    <td colspan="2">周三</td>
+	    <td colspan="2">周四</td>
+	    <td colspan="2">周五</td>
+	    <td colspan="2">周六</td>
+	  </tr>
+	  </thead>
+	  <tbody class=" text-c">
+	  <tr>
+	    <td rowspan="2"></td>
+	    <td></td>
+	    <td rowspan="2"></td>
+	    <td></td>
+	    <td rowspan="2"></td>
+	    <td></td>
+        <td rowspan="2"></td>
+        <td></td>
+	    <td rowspan="2">1日</td>
+        <td>
+		    <label for="checkbox-1">上午</label>
+		    <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">2日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">3日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+	  </tr>
+	  <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="2">4日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">5日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">6日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">7日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">8日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">9日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">10日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="2">11日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">12日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">13日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">14日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">15日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">16日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">17日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="2">18日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">19日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">20日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">21日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">22日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">23日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">24日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="2">25日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">26日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">27日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">28日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">29日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2">30日</td>
+        <td>
+            <label for="checkbox-1">上午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td rowspan="2"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td>
+            <label for="checkbox-1">下午</label>
+            <input type="checkbox" id="checkbox-1">
+        </td>
+        <td></td>
+      </tr>
+	  </tbody>
+	</table>
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-primary radius size-S">确 定</button>
+      <button class="btn radius size-S" data-dismiss="modal" aria-hidden="true">关 闭</button>
+  </div>
+</div>
+<script type="text/javascript" src="../../js/lib/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/H-ui/lib/bootstrap-modal/2.2.4/bootstrap-modalmanager.js"></script>
+<script type="text/javascript" src="../../js/H-ui/lib/bootstrap-modal/2.2.4/bootstrap-modal.js"></script>
+</body>
+</html>

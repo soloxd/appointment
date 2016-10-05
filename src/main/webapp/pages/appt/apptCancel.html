@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../../js/H-ui/static/h-ui/css/H-ui.css" />
+
+</head>
+<body style="margin: 10px;">
+  <div style="margin-bottom: 20px;">
+    <label>患者手机号：</label><input style="width: 150px;" class="input-text radius size-S" value="13592515189"/>
+    <input style="margin-left: 20px;" class="btn btn-primary radius size-S" type="button" value="查 询">
+  </div>  
+
+<table class="table table-border table-striped table-hover table-bg">
+  <thead class="text-c">
+    <tr>
+      <th>就诊时间</th>
+      <th>就诊科室</th>
+      <th>就诊医师</th>
+      <th>午别</th>
+      <th>预约日期</th>
+      <th>患者姓名</th>
+      <th>身份证号</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody class="text-c">
+    <tr>
+      <td>2016-08-27</td>
+      <td>皮肤科</td>
+      <td>王艳云</td>
+      <td>星期六 上午 11点~12点</td>
+      <td>2016-08-02 14:22:25</td>
+      <td>阿萨德</td>
+      <td>612324187711229281</td>
+      <td><input class="btn btn-warning radius size-MINI" href="#myModal" data-toggle="modal" type="button" value="取消预约"></td>
+    </tr>
+    <tr>
+      <td>2016-07-23</td>
+      <td>皮肤科</td>
+      <td>张红玉</td>
+      <td>星期三 下午 15点~16点</td>
+      <td>2016-07-22 14:22:25</td>
+      <td>阿萨德</td>
+      <td>612324187711229281</td>
+      <td><input class="btn btn-warning radius size-MINI" href="#myModal" data-toggle="modal" type="button" value="取消预约"></td>
+    </tr>
+    <tr>
+      <td>2016-06-29</td>
+      <td>皮肤科</td>
+      <td>张红玉</td>
+      <td>星期三 下午 16点~17点</td>
+      <td>2016-06-28 14:22:25</td>
+      <td>阿萨德</td>
+      <td>612324187711229281</td>
+      <td><input class="btn btn-warning radius size-MINI" href="#myModal" data-toggle="modal" type="button" value="取消预约"></td>
+    </tr>
+    <tr>
+      <td>2016-06-12</td>
+      <td>肾脏内科</td>
+      <td>何兵</td>
+      <td>星期一 上午 09点~10点</td>
+      <td>2016-06-11 14:22:25</td>
+      <td>阿萨德</td>
+      <td>612324187711229281</td>
+      <td><input class="btn btn-warning radius size-MINI" href="#myModal" data-toggle="modal" type="button" value="取消预约"></td>
+    </tr>
+  </tbody>
+</table>
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <h4 id="myModalLabel">取消预约</h4>
+    <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+  </div>
+  <div class="modal-body">
+  <p>确定要取消预约吗？</p>
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-primary radius size-S">确 定</button>
+      <button class="btn radius size-S" data-dismiss="modal" aria-hidden="true">关 闭</button>
+  </div>
+</div>
+
+<script type="text/javascript" src="../../js/lib/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/lib/knockout-3.4.0.js"></script>
+<script type="text/javascript" src="../../js/H-ui/lib/bootstrap-modal/2.2.4/bootstrap-modalmanager.js"></script>
+<script type="text/javascript" src="../../js/H-ui/lib/bootstrap-modal/2.2.4/bootstrap-modal.js"></script>
+<script type="text/javascript" src="../../js/appt/apptQuery.js"></script>
+</body>
+</html>

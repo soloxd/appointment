@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="../../js/H-ui/static/h-ui/css/H-ui.css" />
+
+</head>
+<body style="margin: 10px;">
+  <div style="margin-bottom: 20px;">
+    <label>手机号：</label>
+    <input style="width: 120px;" class="input-text radius size-S" data-bind="value: phone" maxlength="11"/>
+    <label style="margin-left: 20px;">身份证号：</label>
+    <input style="width: 170px;" class="input-text radius size-S" data-bind="value: idNumber" maxlength="18"/>
+    <input style="margin-left: 20px;" class="btn btn-primary radius size-S" 
+        type="button" value="查 询" data-bind="click: query" />
+    <input style="margin-left: 15px;" class="btn btn-success radius size-S" 
+        type="button" value="重 置" data-bind="click: reset" />
+  </div>  
+
+<table class="table table-border table-striped table-hover">
+  <thead class="text-c">
+    <tr>
+      <th width="20%">手机号</th>
+      <th width="15%">姓名</th>
+      <th width="30%">身份证号</th>
+      <th width="15%">违约次数</th>
+      <th width="20%">操作</th>
+    </tr>
+  </thead>
+  <tbody class="text-c" data-bind="foreach: list">
+    <tr>
+      <td data-bind="text: phone"></td>
+      <td data-bind="text: name"></th>
+      <td data-bind="text: idNumber"></td>
+      <td>
+          <input data-bind="value: defaultCount" class="btn btn-link radius size-S" type="button" style="height: 20px;"/>
+      </td>
+      <td>
+         <input class="btn btn-link radius size-S" href="#myModal" data-bind="click: $root.select"
+            data-toggle="modal" type="button" value="解锁" style="height: 20px;"/>
+      </td>
+  </tbody>
+</table>
+<div style="margin-top: 10px;">
+    <div style="float: right; margin-right: 10px;" data-bind="visible: shouldShowPage">无符合条件数据</div>
+</div>
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <h4 id="myModalLabel">解锁</h4>
+    <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+  </div>
+  <div class="modal-body">
+  <p>确定要解锁吗？</p>
+  </div>
+  <div class="modal-footer">
+	  <button class="btn btn-primary radius size-S" data-bind="click: unlock">确 定</button>
+	  <button class="btn radius size-S" data-dismiss="modal" aria-hidden="true">关 闭</button>
+  </div>
+</div>
+
+<script type="text/javascript" src="../../js/lib/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/H-ui/lib/bootstrap-modal/2.2.4/bootstrap-modalmanager.js"></script>
+<script type="text/javascript" src="../../js/H-ui/lib/bootstrap-modal/2.2.4/bootstrap-modal.js"></script>
+<script type="text/javascript" src="../../js/lib/knockout-3.4.0.js"></script>
+<script type="text/javascript" src="../../js/sys/blacklist.js"></script>
+
+</body>
+</html>

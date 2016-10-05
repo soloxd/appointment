@@ -1,0 +1,498 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script src="js/H-ui/lib/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/lib/knockout-3.4.0.js"></script>
+<script src="js/department.js"></script>
+<link rel="stylesheet" type="text/css" href="js/bootstrap/css/bootstrap.min.css" />
+<style type="text/css">
+html,body {
+	height: 100%;
+	font-size: 12px
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Microsoft YaHei', '微软雅黑', tahoma, arial,
+		'Hiragino Sans GB', sans-serif;
+	color: #333
+}
+
+h1,h2,h3,h4,h5,h6 {
+	display: inline;
+	font-weight: 400;
+}
+
+img {
+	border: 0 none
+}
+
+a:link,a:hover,a:visited,a:active {
+	text-decoration: none
+}
+
+.a-hover {
+	cursor: pointer
+}
+
+.a-hover span {
+	display: none;
+}
+
+.a-hover:hover {
+	color: #1c84f4 !important
+}
+
+.a-hover:hover span {
+	display: inline-block;
+    color : red;
+}
+
+.icon-font {
+	padding-left: 5px;
+	color: red;
+	cursor: pointer;
+}
+
+div,article,section,aside,li,h1,h2,h3,h4,h5,h6 {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+.ys-util-border-big {
+	border: 1px solid #e8e8e8;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	overflow: hidden
+}
+
+.ys-util-margin-b15 {
+	margin-bottom: 15px !important
+}
+
+.ys-util-text-normal {
+	font-size: 14px
+}
+
+.ys-util-text-unhighlight {
+	color: #97b2c8
+}
+
+.map-layer {
+	width: 100%;
+	height: 100%;
+	min-height: 650px;
+	position: relative
+}
+
+.map-layer .inner-map-layer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	filter: alpha(opacity = 30);
+	-webkit-opacity: .3;
+	-khtml-opacity: .3;
+	opacity: .3;
+	background-color: #000
+}
+
+.map-layer .max-map-panel {
+	padding: 14px;
+	padding-top: 0;
+	width: 1077px;
+	height: 525px;
+	background-color: #fff;
+	margin-top: 57px;
+	margin-left: 39px;
+	z-index: 3;
+	position: absolute;
+	border: 1px #e4e6e7 solid;
+	border-radius: 5px
+}
+
+.map-layer .max-map-panel h1,.map-layer .max-map-panel h2,.map-layer .max-map-panel h3,.map-layer .max-map-panel h4,.map-layer .max-map-panel h5,.map-layer .max-map-panel h6
+	{
+	display: block
+}
+
+.map-layer .max-map-panel .title {
+	height: 60px;
+	line-height: 60px;
+	color: #333
+}
+
+.map-layer .max-map-panel .title h2 {
+	font-size: 18px;
+	display: inline-block !important
+}
+
+.map-layer .max-map-panel .title .close-x {
+	font-size: 18px;
+	float: right;
+	color: #999;
+	cursor: pointer;
+	padding: 0 5px
+}
+
+.map-layer .max-map-panel .title .close-x img {
+	width: 24px;
+	height: 24px;
+	margin-top: 15px
+}
+
+.map-layer .max-map-panel .container {
+	height: 450px;
+	overflow: hidden;
+	clear: both
+}
+
+.map-layer .max-map-panel .container .aside {
+	width: 330px;
+	height: 100%;
+	border: 1px #e4e6e7 solid;
+	float: left;
+	overflow-x: hidden;
+	overflow-y: auto
+}
+
+.map-layer .max-map-panel .container .aside .hospital-info {
+	padding: 8px;
+	padding-right: 0;
+	border-bottom: 1px #e4e6e7 solid;
+	cursor: pointer;
+	margin-bottom: -1px
+}
+
+.map-layer .max-map-panel .container .aside .hospital-info:hover {
+	background-color: #f2f2f2
+}
+
+.map-layer .max-map-panel .container .aside .hospital-info .name {
+	font-size: 16px;
+	height: 16px;
+	line-height: 16px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 300px;
+	display: inline-block;
+	margin: 6px 0;
+	color: #333
+}
+
+.map-layer .max-map-panel .container .aside .hospital-info .telephone,.map-layer .max-map-panel .container .aside .hospital-info .address
+	{
+	font-size: 12px;
+	height: 12px;
+	line-height: 12px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 300px;
+	display: inline-block;
+	margin: 6px 0;
+	color: #666
+}
+
+.map-layer .max-map-panel .container .content {
+	width: 717px;
+	height: 100%;
+	float: right;
+	border: 1px #e4e6e7 solid;
+	border-left: 0
+}
+
+.map-layer .max-map-panel .container .content .bgimg {
+	height: 100%;
+	width: 100%;
+	background: url(/static/pc/assets/common/img/loading.gif) no-repeat
+		center
+}
+
+.BMapLib_sendToPhone {
+	display: none !important
+}
+
+.tangram-suggestion .route-icon {
+	background-position-y: -12px !important
+}
+
+.sel_body_name {
+	height: auto !important
+}
+
+#BMapLib_stationText0 {
+	font-size: 12px !important
+}
+
+img {
+	vertical-align: top
+}
+
+li {
+	list-style: none
+}
+
+.ys-hospital {
+	width: 100%;
+	margin: 0 auto
+}
+
+.ys-hospital .container-tab {
+	width: 1170px;
+	margin: 0 auto;
+	height: 46px;
+	line-height: 45px;
+	background-color: #f6f6f6;
+	border: 1px solid #e8e8e8;
+	border-bottom: 0;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-top-left-radius: 4px;
+	-moz-border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px
+}
+
+.ys-hospital .container-tab .container-tab-navigate .item-tab.item-tab-active
+	{
+	color: #1c84f4;
+	border-color: #1c84f4;
+	background-color: #1c84f4
+}
+
+.ys-hospital .container-tab .container-tab-navigate .item-tab.item-tab-active h3
+	{
+	color: #fff
+}
+
+.ys-hospital .container-tab .container-tab-navigate .item-tab.item-tab-active .item-tab-extInfo
+	{
+	color: #fff
+}
+
+.ys-hospital .container-tab .container-tab-navigate .item-tab.item-tab-active .border-active
+	{
+	height: 4px;
+	background-color: #1c84f4;
+	position: absolute;
+	bottom: 1px;
+	border-radius: 3px 3px 0 0;
+	left: 0;
+	right: 0
+}
+
+.ys-hospital .container-tab-content {
+	margin: 0 auto;
+	clear: both;
+	min-height: 500px;
+	overflow: hidden
+}
+
+.ys-hospital .container-tab-content .container-main {
+	padding: 30px 15px 40px 15px;
+	float: left
+}
+
+.ys-hospital .container-tab-content .container-main .tab-allOffice .container-common-office table
+	{
+	border-color: #e1e9f0;
+	border-collapse: initial;
+}
+
+.ys-hospital .container-tab-content .container-main .tab-allOffice .container-common-office .list-office
+	{
+	width: 100%
+}
+
+.ys-hospital .container-tab-content .container-main .tab-allOffice .container-common-office .list-office .plus-font
+	{
+	display: none;
+}
+
+.ys-hospital .container-tab-content .container-main .tab-allOffice .container-common-office .list-office:hover
+	{
+	border-color: #2896f2
+}
+
+.ys-hospital .container-tab-content .container-main .tab-allOffice .container-common-office .list-office:hover .primary-office
+	{
+	background-color: #fff
+}
+
+.ys-hospital .container-tab-content .container-main .tab-allOffice .container-common-office .list-office:hover .plus-font
+	{
+	display: inline-block;
+}
+
+.ys-hospital .container-tab-content .container-main .tab-allOffice .container-common-office .list-office:hover .primary-office .normal
+	{
+	display: none
+}
+
+.ys-hospital .container-tab-content .container-main .tab-allOffice .container-common-office .list-office:hover .primary-office .hover
+	{
+	display: inline-block !important
+}
+
+.ys-hospital .container-tab-content .container-main .tab-allOffice .container-common-office .list-office .all-office,.ys-hospital .container-tab-content .container-main .tab-allOffice .container-common-office .list-office .primary-office
+	{
+	width: 90px;
+	border-right: 1px solid #e1e9f0;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 14px;
+	height: 14px;
+	line-height: 14px
+}
+
+.ys-hospital .container-tab-content .container-main .tab-allOffice .container-common-office .list-office .all-office .arrow-icon,.ys-hospital .container-tab-content .container-main .tab-allOffice .container-common-office .list-office .primary-office .arrow-icon
+	{
+	width: 5px;
+	height: 12px;
+	vertical-align: middle;
+	float: right;
+	margin-right: -5px
+}
+
+.ys-hospital .container-tab-content .container-main .tab-allOffice .container-common-office .list-office .primary-office
+	{
+	background-color: #f5fafe
+}
+
+.ys-hospital .container-tab-content .container-main .tab-allOffice .container-common-office .list-office .secondary-office dl
+	{
+	width: 100%;
+	padding: 16px 20px;
+	overflow: hidden;
+	clear: both
+}
+
+.ys-hospital .container-tab-content .container-main .tab-allOffice .container-common-office .list-office .secondary-office dl dd
+	{
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 20px
+}
+
+.center-block {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.select button {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.selected {
+    background-color: #eee;
+}
+</style>
+</head>
+<body>
+    <div class="ys-hospital">
+        <div class="map-layer" id="map-layer">
+            <div class="container-tab-content">
+                <article class="container-main"><input style="margin: 0 0 20px 0;" class="btn btn-primary btn-sm" type="button"
+                    data-toggle="modal" data-target="#edit-dialog" data-bind="click: function() {departmentSelector.initial(true)}" value="添加科室">
+                    <div id="allOffice" class="tab-allOffice">
+                        <div class="container-common-office" data-bind="foreach: list">
+                            <table class="ys-util-margin-b15 list-office ys-util-border-big">
+                                <tbody>
+                                    <tr>
+                                        <td class="primary-office a-hover" data-toggle="modal" data-target="#remove-dialog" data-bind="click: $root.select">
+                                            <h4 class="ys-util-text-normal ys-util-text-unhighlight" data-bind="text: name"></h4> <span
+                                            class="glyphicon glyphicon-remove"></span> <img
+                                            class="arrow-icon normal" src="images/keshi/arrow_normal.png"><img class="arrow-icon hover"
+                                            src="images/keshi/arrow_hover.png" style="display: none;">
+                                    </td>
+                                        <td class="secondary-office" data-bind="click: function(){$root.edit($data)}">
+                                            <dl class="" data-bind="foreach: children">
+                                                <dd>
+                                                    <h4><span class="ys-util-text-normal" data-bind="text: name"></span></h4>
+                                            </dd>
+                                        </dl>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div></article>
+        </div>
+    </div>
+</div>
+    <div id="edit-dialog" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">编辑科室</h4>
+            </div>
+                <div class="modal-body form form-horizontal">
+                    <div class="alert alert-danger" role="alert" data-bind="visible:departmentSelector.message().length > 0, text: departmentSelector.message"></div>
+                    <div class="form-group">
+                        <div class="col-sm-12"><select class="form-control"
+                            data-bind="options: departmentSelector.unselectPrimary, 
+                                       optionsText: 'name', 
+                                       value: departmentSelector.primary, 
+                                       optionsCaption: '请选择一级科室', 
+                                       event: {change: departmentSelector.vaildPrimary},
+                                       enable:departmentSelector.editable"></select>
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <div class="col-sm-5" style="overflow: auto; height: 220px; padding-right: 0">
+                            <ul class="list-group" data-bind="foreach: departmentSelector.unselectSecondary">
+                                <li data-bind="text: name, attr: {class: $root.departmentSelector.isSelected($data) ? 'list-group-item selected' : 'list-group-item'}, click: $root.departmentSelector.select"></li>
+                        </ul>
+                    </div>
+                        <div class="col-sm-2 select">
+                            <button class="btn btn-default center-block" type="button" data-bind="click: departmentSelector.add">&gt;</button>
+                            <button class="btn btn-default center-block" type="button" data-bind="click: departmentSelector.remove">&lt;</button>
+                    </div>
+                        <div class="col-sm-5" style="overflow: auto; height: 220px;">
+                            <ul class="list-group" data-bind="foreach: departmentSelector.secondary">
+                                <li data-bind="text: name, attr: {class: $root.departmentSelector.isSelected($data) ? 'list-group-item selected' : 'list-group-item'}, click: $root.departmentSelector.select"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary btn-sm" data-bind="click: save">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="remove-dialog" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                </button>
+                    <h4 class="modal-title">删除</h4>
+            </div>
+                <div class="modal-body">
+                    <p>确定删除？</p>
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-bind="click: remove">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

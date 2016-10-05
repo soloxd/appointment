@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../../js/H-ui/static/h-ui/css/H-ui.css" />
+
+</head>
+<body style="margin: 20px;">
+    
+ <div style="margin-bottom: 20px;">
+   <label >开始日期：</label><input style="width: 125px;" class="input-text radius size-S Wdate" onfocus="WdatePicker({readOnly:true})" />
+   <label style="margin-left: 20px;">结束日期：</label><input style="width: 125px;" class="input-text radius size-S Wdate" onfocus="WdatePicker({readOnly:true})"/>
+    <p style="height: 5px; margin: 0;">&nbsp;</p>
+   <label>一级科室：</label>
+    <select style="width: 150px; height: 24px; margin-top: 3px;" class="select" size="1" name="demo1">
+        <option value="" selected>全部</option>
+        <option value="1">内科</option>
+        <option value="2">外科</option>
+        <option value="3">妇产科</option>
+        <option value="4">儿科</option>
+        <option value="4">骨科</option>
+        <option value="4">口腔科</option>
+        <option value="4">眼科</option>
+        <option value="4">中医科</option>
+        <option value="4">精神心理科</option>
+        <option value="4">皮肤性病科</option>
+        <option value="4">整形科</option>
+        <option value="4">肿瘤科</option>
+        <option value="4">男科</option>
+        <option value="4">疼痛科</option>
+        <option value="4">耳鼻喉科</option>
+        <option value="4">重症医学科</option>
+        <option value="4">急诊科</option>
+        <option value="4">临床其他</option>
+    </select>
+    <label style="margin-left: 20px;">二级科室：</label>
+    <select style="width: 150px; height: 24px; margin-top: 3px;" class="select" size="1" name="demo1">
+        <option value="" selected>全部</option>
+        <option value="1">风湿免疫科</option>
+        <option value="2">感染性疾病科</option>
+        <option value="3">呼吸内科 </option>
+        <option value="4">呼内一科</option>
+        <option value="4">呼内二科</option>
+        <option value="4">老年心内科</option>
+        <option value="4">老年医学科</option>
+        <option value="4">内分泌科</option>
+        <option value="4">内分泌一科</option>
+        <option value="4">内分泌二科</option>
+        <option value="4">肾病风湿科</option>
+        <option value="4">神经内科</option>
+        <option value="4">神内一科</option>
+        <option value="4">神内二科</option>
+        <option value="4">神内三科</option>
+        <option value="4">消化内科</option>
+        <option value="4">心内一科</option>
+        <option value="4">心内二科</option>
+        <option value="4">心内三科</option>
+        <option value="4">心内四科</option>
+        <option value="4">心内五科</option>
+        <option value="4">心血管内科</option>
+        <option value="4">血液科</option>
+        <option value="4">血液内科</option>
+    </select>
+    <label style="margin-left: 20px;">医生：</label><input style="width: 100px;" class="input-text radius size-S" />
+<!--    <label style="margin-left: 20px;">统计类型：</label> -->
+<!--     <select style="width: 100px; height: 24px; margin-top: 3px;" class="select" size="1" name="demo1"> -->
+<!--         <option value="0">按时间</option> -->
+<!--         <option value="1">按科室统计</option> -->
+<!--         <option value="2">按人员</option> -->
+<!--     </select> -->
+   <input style="margin-left: 20px;" class="btn btn-primary radius size-S" type="button" value="查 询">
+   <input style="margin-left: 20px;" class="btn btn-success radius size-S" type="button" value="导出Excel">
+ </div>
+ 
+ <table class="table table-border table-bordered">
+          <thead class=" text-c">
+            <tr>
+              <th colspan="10">2016年6月1日 ~ 2016年6月30日</th>
+            </tr>
+            <tr>
+              <th rowspan="2"></th>
+              <th colspan="2">张三</th>
+              <th colspan="2">李四</th>
+              <th colspan="2">王五</th>
+              <th colspan="2">赵六</th>
+            </tr>
+            <tr>
+              <td>预约数</td>
+              <td>成功率</td>
+              <td>预约数</td>
+              <td>成功率</td>
+              <td>预约数</td>
+              <td>成功率</td>
+              <td>预约数</td>
+              <td>成功率</td>
+            </tr>
+          </thead>
+          <tbody class=" text-c">
+            <tr>
+              <th>电话预约</th>
+              <td>100</td>
+              <td>80%</td>
+              <td>100</td>
+              <td>90%</td>
+              <td>100</td>
+              <td>90%</td>
+              <td>100</td>
+              <td>90%</td>
+            </tr>
+            <tr>
+              <th>网上预约</th>
+              <td>100</td>
+              <td>80%</td>
+              <td>100</td>
+              <td>90%</td>
+              <td>100</td>
+              <td>90%</td>
+              <td>100</td>
+              <td>90%</td>
+            </tr>
+            <tr>
+              <th>现场预约</th>
+              <td>100</td>
+              <td>80%</td>
+              <td>100</td>
+              <td>90%</td>
+              <td>100</td>
+              <td>90%</td>
+              <td>100</td>
+              <td>90%</td>
+            </tr>
+            <tr>
+              <th>总数</th>
+              <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="300" /></td>
+              <td style="color: #5eb95e">80%</td>
+              <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="300" /></td>
+              <td style="color: #5eb95e">90%</td>
+              <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="300" /></td>
+              <td style="color: #5eb95e">90%</td>
+              <td><input class="btn btn-link radius size-S" href="#myModal" data-toggle="modal" type="button" value="300" /></td>
+              <td style="color: #5eb95e">90%</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        
+ <div style="text-align: center;">
+ <div id="monthCount" style="width:98%; height:450px; border: 1px solid #cccccc; margin-top: 20px; padding: 0 10px;"></div>
+ </div>
+ <br>
+ 
+ <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" data-height="80%" data-width="90%" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <h4 id="myModalLabel">预约信息列表</h4>
+    <a class="close" data-dismiss="modal" aria-hidden="true" href="javascript:void();">×</a>
+  </div>
+    <div class="modal-body">
+      <table class="table table-border table-striped">
+      <thead class="text-c">
+        <tr>
+          <th>患者</th>
+          <th>医生</th>
+          <th>预约信息</th>
+          <th>挂号信息</th>
+          <th>状态</th>
+          <th>短信通知</th>
+        </tr>
+      </thead>
+      <tbody class="text-c">
+        <tr>
+          <td>
+                      李学民<br/>
+                       男<br/>
+            13324253435<br/>
+            612325198811223344
+          </td>
+          <td>
+                      倪文琼 （NWM）<br/>
+                      主任医师<br/>
+                      皮肤科
+          </td>
+          <td>
+                      预约码：125604<br/>
+            2016-09-11<br/>
+                      星期三 上午 10点~11点
+          </td>
+          <td>
+                      张跃红<br/>
+            2016-09-07 13:24:28<br/>
+                      电话预约
+          </td>
+          <td>未登记</td>
+          <td>已发送</td>
+        </tr>
+        <tr>
+          <td>
+                      温星星<br/>
+                      男<br/>
+            18736074409<br/>
+            411024199309264725
+          </td>
+          <td>
+                      倪文琼 （NWM）<br/>
+                      主任医师<br/>
+                      皮肤科
+          </td>
+          <td>
+                      预约码：125645<br/>
+            2016-09-16<br/>
+                      星期三 下午 15点~16点
+          </td>
+          <td>
+                      张跃红<br/>
+            2016-09-04 10:33:44<br/>
+                      电话预约
+          </td>
+          <td>未登记</td>
+          <td>已发送</td>
+        </tr>
+        <tr>
+          <td>
+                      黄莎莎<br/>
+                      女<br/>
+            18629298080<br/>
+            612325199102032323
+          </td>
+          <td>
+                      李学民 （LXM）<br/>
+                      主任医师<br/>
+                      肝胆胰外科
+          </td>
+          <td>
+                      预约码：125655<br/>
+            2016-09-12<br/>
+                      星期二 上午 9点~10点
+          </td>
+          <td>
+                      张萌<br/>
+            2016-09-02 14:22:25<br/>
+                      电话预约
+          </td>
+          <td>未登记</td>
+          <td>已发送</td>
+        </tr>
+      </tbody>
+    </table>
+    <p/>
+<div id="page" style="text-align:center;"></div>
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-success radius size-S">导出Excel</button>
+      <button class="btn radius size-S" data-dismiss="modal" aria-hidden="true">关 闭</button>
+  </div>
+</div>
+
+<script type="text/javascript" src="../../js/lib/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../../js/lib/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="../../js/lib/echarts/theme/macarons.js"></script>
+<script type="text/javascript" src="../../js/lib/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="../../js/H-ui/static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="../../js/H-ui/lib/bootstrap-modal/2.2.4/bootstrap-modalmanager.js"></script>
+<script type="text/javascript" src="../../js/H-ui/lib/bootstrap-modal/2.2.4/bootstrap-modal.js"></script>
+<script type="text/javascript">
+$(function() {
+    
+    var monthCountChart = echarts.init(document.getElementById("monthCount"), window.macaronsTheme);
+    var monthCountOption = {
+        title: {
+            text: "2016年6月1日 ~ 2016年6月30日"
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data:['电话预约', '网上预约', '现场预约', '成功率'],
+            y:8
+        },
+        grid: {
+            x:80,
+            x2:50,
+            y2:50
+        },
+        xAxis: {
+            type : 'category',
+            show: 'true',
+            data : ['张三', '李四', '王五', '赵六'],
+            axisLabel:{
+                interval:'0'
+               // rotate: 35
+            }
+        },
+        yAxis: [
+            {
+                type : 'value'
+            },
+	        {
+	            type: 'value',
+	            name: '成功率',
+	            min: 0,
+	            max: 100,
+	            interval: 10,
+	            axisLabel: {
+                    formatter: '{value}%'
+            }
+        }
+        ],
+        toolbox: {
+            show : true,
+            orient: 'horizontal',
+            x: 'right',
+            y: 'top',
+            feature : {
+                magicType: {show: true, type: ['line']},
+                restore: {show: true},
+                saveAsImage: {show: true}
+            }
+        },
+        series: [
+            {
+                name:'电话预约',
+                type:'bar',
+                data:[221, 324, 420, 450]
+            },
+            {
+                name:'网上预约',
+                type:'bar',
+                data:[112, 356, 64, 337]
+            },
+            {
+                name:'现场预约',
+                type:'bar',
+                data:[98, 114, 320, 400]
+            },
+            {
+                name:'成功率',
+	            type:'line',
+	            yAxisIndex: 1,
+                data:[85, 46, 67, 77]
+            }
+        ]
+    };
+    monthCountChart.setOption(monthCountOption);
+    
+})
+</script>
+</body>
+</html>
