@@ -84,9 +84,9 @@ text-decoration:none;
                             <tr>
                                 <td style="width:60px ;vertical-align: top;"><ul style="-webkit-padding-start: 0px;">一级科室：</ul></td>
                                 <td>
-                                <ul data-bind="foreach: top.children">
-                                    <li><span data-bind="text: name, click: active, attr: {class: actived() ? 'active' : ''}"></span></li>
-                                  </ul>
+                                    <ul data-bind="foreach: departments">
+                                        <li><span data-bind="attr: {class: actived() ? 'active':''}, text: name, click: function(){$root.setPrimary($data)}"></span></li>
+                                    </ul>
                                 </td>
                             </tr>
                             <tr>
@@ -94,9 +94,9 @@ text-decoration:none;
                             </tr>
                             <tr>
                                 <td>二级科室：</td>
-                                <td>
-                                    <ul data-bind="foreach: secondary">
-                                        <li><span data-bind="text: name, click: active, attr: {class: actived() ? 'active' : ''}"></span></li>
+                                <td data-bind="with: primary">
+                                    <ul data-bind="foreach: children">
+                                        <li><span data-bind="attr: {class: actived() ? 'active':''}, text: name, click: function(){$root.setSecondary($data)}"></span></li>
 									</ul>
                                 </td>
                             </tr>
